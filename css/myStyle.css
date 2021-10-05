@@ -48,13 +48,13 @@ pre {
 	/* font-size:16px; */
 	
 	/* 设置字体 */
-	font-family:Consolas, "Courier New", Courier, monospace;
+	/* font-family:Consolas, "Courier New", Courier, monospace; */
 	
 	/* 设置字体颜色 */
 	/* color:red; */
 	
 	/* width:765px; */
-	margin: 15px 0 0 0;
+	margin: 0 0 0 0;/*15px 0 0 0*/
 	padding: 10px;
 	border: 0;
 	border: 1px dotted #785;

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>高中数学</title>
+		<link rel="stylesheet" href="../../css/myStyle.css" />
+		<!-- MathJax数学公式 -->
+		<script src="../../js/load-mathjax.js" async></script>
+		<!-- echarts图表: https://github.com/apache/echarts,
+		     https://echarts.apache.org/zh/index.html -->
+		<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+	</head>
+	
+	<body>
+		<h1>高中数学</h1>
+		<hr />
+		<pre>
+			符号备份: ⊂⊃⊄⊅⊆⊇⊈⊉⫅⫋⊊⊋⊌⊍⊎   ∈∉∊∋∌∍   ∩∪ ∅  ⇒⇔⇍ ⇎ ⇏ ⇐(输入双箭头查找)
+		</pre>
+		
+		<h2>一.高一数学, 资料来自<a href="http://www.dzkbw.com/books/gaoyi-shuxue/" target="_blank">高一数学电子课本</a></h2>
+		
+		<h3>第一册(B版)</h3>
+		<div class="code_block">
+			<h4>1.第一章 <a href="1collectAndLogic.html" target="_blank">集合与常用逻辑用语</a></h4>
+
+			<h4>2.第二章 <a href="2equalAndInequal.html" target="_blank">等式与不等式</a></h4>
+			
+			<h4>3.第三章 <a href="3function.html" targt="_blank">函数</a></h4>
+		</div>
+		
+		
+		<br />
+		<h3>第二册(B版)</h3>
+		<div class="code_block">
+			<h4>4.第四章 <a href="4function2.html" target="_blank">指数函数、对数函数与幂函数</a></h4>
+			
+			<h4>5.第五章 <a href="" target="_blank">统计与概率</a></h4>
+
+			<h4>6.第六章 <a href="" target="_blank">平面向量初步</a></h4>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		内容太多, 一时半会整理补全...
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		
+		
+		
+		<h3>1.自然对数ln</h3>
+		<div class="code_block">
+			$log_e \ N = lnN$ <br />
+			$lnN = x   <=>   e^x = N$ <br />
+			$e = {lim \over {n \rightarrow \infty}} (1 + {1 \over x})^n ≈ 2.71828...$
+		</div>
+		<div>下方是自然对数 y = ln(x);</div>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="sinx" style="width: 400px;height:400px;"></div>
+		<script type="text/javascript">
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById('sinx'));
+			
+			 var option;
+			 function func(x) {
+				 //返回数的自然对数（底为e）
+			   return Math.log(x);
+			 }
+			 function generateData() {
+			   let data = [];
+			   for (let i = 0; i <= 10; i += 0.01) {
+				 data.push([i, func(i)]);
+			   }
+			   return data;
+			 }
+			 option = {
+			   animation: false,
+			   grid: {
+				 // 图表距4个边的距离
+				 top: 40,
+				 left: 50,
+				 right: 40,
+				 bottom: 50
+			   },
+			   xAxis: {
+				 name: 'x轴',
+				 minorTick: {
+				   // 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+				   // 是否显示次分隔线。默认不显示(网格竖着那条线)
+				   show: true
+				 }
+			   },
+			   yAxis: {
+				 name: 'y轴',
+				 min: -5,
+				 max: 5,
+				 minorTick: {
+					// 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+					// 是否显示次分隔线。默认不显示(网格横着那条线)
+				   show: true
+				 }
+			   },
+			   dataZoom: [
+				 // 缩放
+				 {
+				   show: true,
+				   // inside: 将缩放组件内置在坐标系中
+				   type: 'inside',
+				   filterMode: 'none',
+				   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+				   xAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 },
+				 {
+				   show: true,
+				   type: 'inside',
+				   filterMode: 'none',
+				   yAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 }
+			   ],
+			   series: [
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData()
+				 }
+			   ]
+			 };
+			 
+			 option && myChart.setOption(option);
+		</script>
+	</body>
+</html>

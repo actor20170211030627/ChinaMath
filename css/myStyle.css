@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+/* 换行会被执行 */
+pre {
+	/*清除继承样式*/
+	/* all:initial; */
+	
+	/*设置布局流，避免换行导致的错误布局*/
+	display:block;
+	
+	/*保留换行符，设置溢出换行*/
+	white-space:pre-line;
+	
+	/*设置字号*/
+	/* font-size:12px; */
+	
+	/* 设置字体 */
+	font-family:Consolas, "Courier New", Courier, monospace;
+	
+	/* 设置字体颜色 */
+	/* color:red; */
+	
+	/* width:765px; */
+	margin: 15px 0 0 0;
+	padding: 10px;
+	border: 0;
+	border: 1px dotted #785;
+	background: #f5f5f5;
+	line-height:1.4;
+	font-family:Consolas;
+	overflow-x:auto;
+	
+	/* 一行太长的话会自动换行, 要不要解决?? */
+}
+
+/* 代码块, 自动换行, 可用<div class="code_block"> */
+.code_block {
+	/*清除继承样式*/
+	/* all:initial; */
+	
+	/*设置布局流，避免换行导致的错误布局*/
+	display:block;
+	
+	/*保留换行符，设置溢出换行*/
+	/* white-space:pre-line; */
+	
+	/*设置字号*/
+	/* font-size:16px; */
+	
+	/* 设置字体 */
+	font-family:Consolas, "Courier New", Courier, monospace;
+	
+	/* 设置字体颜色 */
+	/* color:red; */
+	
+	/* width:765px; */
+	margin: 15px 0 0 0;
+	padding: 10px;
+	border: 0;
+	border: 1px dotted #785;
+	background: #f5f5f5;
+	line-height:1.4;
+	font-family:Consolas;
+	overflow-x:auto;
+	
+	/* 一行太长的话会自动换行, 要不要解决?? */
+}

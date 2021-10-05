@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>高数第一章: 极限与连续</title>
+		<link rel="stylesheet" href="css/myStyle.css" />
+		<!-- MathJax数学公式 -->
+		<script src="js/load-mathjax.js" async></script>
+		<!-- echarts图表: https://github.com/apache/echarts,
+		     https://echarts.apache.org/zh/index.html -->
+		<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+	</head>
+	
+	
+	<body>
+		<h1>高数第一章: 极限与连续</h1>
+		
+		
+		<h2>1.极限与连续之 函数的定义与初等特性(第1个视频, 以此类推)</h2>
+		<ul>
+			<li>1.函数的概念</li>
+			<div class="code_block">
+				设有两个变量 x 和 y, D 是一个非空的实数集. 若存在一个对应规则 $f$,
+				使得对于每一个 x ∈ D, 按照这个规则, 有唯一确定的实数值 y 与之对应, <br />
+				则称 $f$ 是定义在 D 上的一个函数, x 称为自变量, D 称为函数 $f$ 的定义域,
+				y 称因变量. <br />
+				函数 f 在 x ∈ D 对应的$y = f(x)$, x ∈ D 的函数值所成的集合,
+				常记为 $R_f$, $R_f = \{y \ | \ y = f(x), \ x ∈ D\}$, 称为函数的值域,
+				以后"实数"的"实"字常省去, 习惯上, 也称 y 或 f(x) 为 x 的函数.
+			</div>
+			
+			<br />
+			<li>2.反函数</li>
+			<div class="code_block">
+				y = f(x) (x ∈ D), 严格单调, 例y = sin(x)不是严格单调, 所以不是反函数. <br />
+				例: $y = sin(x) \ (-{π \over 2} < x < {π \over 2})$ 内的函数, 见下图
+			</div>
+			<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+			<div id="sinx" style="width: 400px;height:400px;"></div>
+			<script type="text/javascript">
+				// 基于准备好的dom，初始化echarts实例
+				var myChart = echarts.init(document.getElementById('sinx'));
+				
+				 var option;
+				 function func(x) {
+				   return Math.sin(x);
+				 }
+				 function generateData() {
+				   let data = [];
+				   for (let i = -Math.PI / 2; i <= Math.PI / 2; i += 0.1) {
+					 data.push([i, func(i)]);
+				   }
+				   return data;
+				 }
+				 option = {
+				   animation: false,
+				   grid: {
+					 // 图表距4个边的距离
+					 top: 40,
+					 left: 50,
+					 right: 40,
+					 bottom: 50
+				   },
+				   xAxis: {
+					 name: 'x轴',
+					 minorTick: {
+					   // 坐标轴次刻度线
+					   show: true
+					 },
+					 minorSplitLine: {
+					   // 是否显示次分隔线。默认不显示(网格竖着那条线)
+					   show: true
+					 }
+				   },
+				   yAxis: {
+					 name: 'y轴',
+					 min: -2,
+					 max: 2,
+					 minorTick: {
+						// 坐标轴次刻度线
+					   show: true
+					 },
+					 minorSplitLine: {
+						// 是否显示次分隔线。默认不显示(网格横着那条线)
+					   show: true
+					 }
+				   },
+				   dataZoom: [
+					 // 缩放
+					 {
+					   show: true,
+					   // inside: 将缩放组件内置在坐标系中
+					   type: 'inside',
+					   filterMode: 'none',
+					   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+					   xAxisIndex: [0],
+					   startValue: -20,
+					   endValue: 20
+					 },
+					 {
+					   show: true,
+					   type: 'inside',
+					   filterMode: 'none',
+					   yAxisIndex: [0],
+					   startValue: -20,
+					   endValue: 20
+					 }
+				   ],
+				   series: [
+					 {
+					   // 显示类型, line线
+					   type: 'line',
+					   // 是否显示绘制的点
+					   showSymbol: false,
+					   // 超出界限外的是否裁剪掉
+					   clip: true,
+					   data: generateData()
+					 }
+				   ]
+				 };
+				 
+				 option && myChart.setOption(option);
+			</script>
+			
+			
+			
+			<p>
+				When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
+				$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+			</p>
+			
+			<p>
+				<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+				<div id="main" style="width: 600px;height:400px;"></div>
+				<script type="text/javascript">
+					// 基于准备好的dom，初始化echarts实例
+					var myChart = echarts.init(document.getElementById('main'));
+					
+					 var option;
+					 function func(x) {
+					   x /= 10;
+					   return Math.sin(x) * Math.cos(x * 2 + 1) * Math.sin(x * 3 + 2) * 50;
+					 }
+					 function generateData() {
+					   let data = [];
+					   for (let i = -200; i <= 200; i += 0.1) {
+						 data.push([i, func(i)]);
+					   }
+					   return data;
+					 }
+					 option = {
+					   animation: false,
+					   grid: {
+						 // 图表距4个边的距离
+						 top: 40,
+						 left: 50,
+						 right: 40,
+						 bottom: 50
+					   },
+					   xAxis: {
+						 name: 'x轴',
+						 minorTick: {
+						   // 坐标轴次刻度线
+						   show: true
+						 },
+						 minorSplitLine: {
+						   // 是否显示次分隔线。默认不显示(网格竖着那条线)
+						   show: true
+						 }
+					   },
+					   yAxis: {
+						 name: 'y轴',
+						 min: -100,
+						 max: 100,
+						 minorTick: {
+							// 坐标轴次刻度线
+						   show: true
+						 },
+						 minorSplitLine: {
+							// 是否显示次分隔线。默认不显示(网格横着那条线)
+						   show: true
+						 }
+					   },
+					   dataZoom: [
+						 // 缩放
+						 {
+						   show: true,
+						   // inside: 将缩放组件内置在坐标系中
+						   type: 'inside',
+						   filterMode: 'none',
+						   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+						   xAxisIndex: [0],
+						   startValue: -20,
+						   endValue: 20
+						 },
+						 {
+						   show: true,
+						   type: 'inside',
+						   filterMode: 'none',
+						   yAxisIndex: [0],
+						   startValue: -20,
+						   endValue: 20
+						 }
+					   ],
+					   series: [
+						 {
+						   // 显示类型, line线
+						   type: 'line',
+						   // 是否显示绘制的点
+						   showSymbol: true,
+						   // 超出界限外的是否裁剪掉
+						   clip: true,
+						   data: generateData()
+						 }
+					   ]
+					 };
+					 
+					 option && myChart.setOption(option);
+				</script>
+			</p>
+	
+		</ul>
+		
+		
+		<h2>2.极限与连续之 极限的定义</h2>
+	</body>
+</html>

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>第四章 指数函数、对数函数与幂函数</title>
-		<link rel="stylesheet" href="../../css/myStyle.css" />
+		<link rel="stylesheet" href="../../css/code_black.css" />
 		<!-- MathJax数学公式 -->
 		<script src="../../js/load-mathjax.js" async></script>
 		<!-- echarts图表: https://github.com/apache/echarts,
@@ -22,7 +22,8 @@
 			1.初中我们已经学习了整数指数幂的知识,例如 <br />
 			$2^5 = 2 × 2 × 2 × 2 × 2 = 32$, <br />
 			$3^0 = 1$, <br />
-			<font color="red">$5^{-3} = {1 \over 5 ^ 3}$</font> = ${1 \over 125}$ <br />
+			$5^{-3} = {1 \over 5 ^ 3}$ = ${1 \over 125}$ <br />
+			<font color="red">$a^{-n}$</font> = $a^{0-n} = {a^0 \over a^n}$ <font color="red">$ = {1 \over a ^ n}$</font> <br />
 			一般地, $a^n$ 中的 a 称为<font color="red">底数</font>, n称为<font color="red">指数</font>. <br />
 			整数指数幂运算的运算法则有 <br />
 			<font color="red">$a^ma^n = a^{m+n}$, ${a^m \over a^n} = a^{m-n}$ <br />
@@ -35,16 +36,291 @@
 			
 			 <br />
 			 3.分数指数幂 <br />
+			 $(5^{1 \over 2})^2 = 5^{{1 \over 2} * 2} = 5^1 = 5$ <br />
+			 <font color="red">$a^{1 \over n} = \sqrt[n]{a}$</font> <br />
+			 $5^{3 \over 4} = (5^3)^{1 \over 4} = (5^{1 \over 4})^3$ <br />
+			 <font color="red">$a^{m \over n} = (\sqrt[n]{a})^m = \sqrt[n]{a^m}$</font> <br />
 		</div>
+		
+		<h4>2.实数指数幂</h4>
+		<div class="code_block">
+			有理指数幂还可以推广到无理指数幂. 例: <br />
+			<font color="red">$a^\pi$</font>
+		</div>
+		<h4>3.用信息技术求实数指数幂</h4>
+		
 		
 		<br />
 		<h3>4.1.2 指数函数的性质与图像</h3>
+		<h4>1.指数函数</h4>
+		<div class="code_block">
+			<font color="red">$y = a^x$ (a是常数, a ＞0, 且 a ≠ 1)</font> <br />
+			例: $y = 2^x$, 见下图1
+		</div>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="pow1" style="width: 400px;height:400px;"></div>
+		<script type="text/javascript">
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById('pow1'));
+			
+			 var option;
+			 function func(x) {
+			   return Math.pow(2, x);
+			 }
+			 function generateData() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func(i)]);
+			   }
+			   return data;
+			 }
+			 option = {
+			   animation: false,
+			   grid: {
+				 // 图表距4个边的距离
+				 top: 40,
+				 left: 50,
+				 right: 40,
+				 bottom: 50
+			   },
+			   xAxis: {
+				 name: 'x轴',
+				 minorTick: {
+				   // 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+				   // 是否显示次分隔线。默认不显示(网格竖着那条线)
+				   show: true
+				 }
+			   },
+			   yAxis: {
+				 name: 'y轴(图1, 指数函数, 2的x次幂)',
+				 min: -5,
+				 max: 5,
+				 minorTick: {
+					// 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+					// 是否显示次分隔线。默认不显示(网格横着那条线)
+				   show: true
+				 }
+			   },
+			   dataZoom: [
+				 // 缩放
+				 {
+				   show: true,
+				   // inside: 将缩放组件内置在坐标系中
+				   type: 'inside',
+				   filterMode: 'none',
+				   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+				   xAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 },
+				 {
+				   show: true,
+				   type: 'inside',
+				   filterMode: 'none',
+				   yAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 }
+			   ],
+			   series: [
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData()
+				 }
+			   ]
+			 };
+			 
+			 option && myChart.setOption(option);
+		</script>
 		
+		<h4>2.用信息技术作指数函数的图像</h4>
+		
+		
+		<br />
 		<h2>4.2对数与对数函数</h2>
 		<h3>4.2.1对数运算</h3>
-		<h3>4.2.2对数运算法则</h3>
-		<h3>4.2.3对数函数的性质与图像</h3>
+		<h4>1.对数的概念</h4>
+		<div class="code_block">
+			如果 $a^x = N$(a > 0, a ≠ 1), 那么 x 叫做以 a 为底 N 的<font color="red">对数</font>, 记作: <br />
+			<font color="red">$x = log_a \ N$(N > 0)</font>, 其中 a 叫做对数的<font color="red">底数</font>, N 叫做<font color="red">真数</font>. <br />
+			N 必须>0, 负数和零没有对数.
+		</div>
 		
+		<h4>2.常用对数与自然对数</h4>
+		<div class="code_block">
+			1.以 10 为底的对数称为常用对数, 即: <font color="red">$log_{10} \ N$</font>. <br />
+			1.1.为了简便起见, 常用对数的表示中, 通常把底10略去不写, 并把“log”写成“lg",
+				即把 $log_{10} \ N$ 简写为<font color="red">$lg \ N$</font>. <br />
+			<br />
+			2.在科学技术中, 常常还使用以无理数 e=2.71828… 为底的对数, 以e为底的对数称为自然对数,
+			  自然对数 $log_e \ N$ 通常简写为 <font color="red">$ln \ N$</font>.
+			  $e = \displaystyle \lim_{n \to \infty} (1 + {1 \over n})^n$(大学的求极限)
+		</div>
+		<h4>3.用信息技术计算常用对数和自然对数</h4>
+		
+		
+		<br />
+		<h3>4.2.2对数运算法则</h3>
+		<h4>1.积, 商, 幂 的对数</h4>
+		<div class="code_block">
+			设$a^\alpha =M > 0, \ a^\beta =N > 0$, 则 $log_a \ M = \alpha, \ log_a \ N = \beta$. <br />
+			由 $a^{\alpha + \beta} = a^\alpha a^\beta = MN$ <br />
+			可知 $log(MN) = a + β$, 代人 $\alpha$ 与 $\beta$ 的值, 有: <br />
+			⇒ <font color="red">$log_a \ (MN) = log_a M + log_a N$</font> <br />
+			⇒ <font color="red">$log_a \ ({M \over N}) = log_a M - log_a N$</font> <br />
+			⇒ <font color="red">$log_a \ (N_1 N_2...N_k) = log_a N_1 + log_a N_2 + ... + log_a N$</font> <br />
+			⇒ <font color="red">$log_a \ N^k = k \ log_a N$</font>(当 $N_1 = N_2 = ... = N_k$ 时) <br />
+		</div>
+		<h4>2.换底公式</h4>
+		<div class="code_block">
+			&emsp; 在没有计算器的时代, 人们曾花费了大量的精力, 求出一些常用对数的近似值,
+			制成表格以供大家查询使用. 这样一来, 大家就可以根据已知的值和对数运算法则
+			求出另一些对数的值, 例如: lg3≈0.4771, lg5≈0.6990. <br />
+			<br />
+			求 $log_3 \ 5$ 的值? <br />
+			设 $log_3 \ 5=x$, 则 $3^x = 5$, $lg \ {3^x} = lg \ 5$, 即$x \ lg3 = lg5$, 所以$x = {lg \ 5 \over lg \ 3} = {ln \ 5 \over ln \ 3}$ ≈ 1.4651. <br />
+			<br />
+			⇒ 换底公式: <br />
+			<font color="red">$log_a \ b = {lg \ b \over lg \ a} = {ln \ b \over ln \ a} = {log_c \ b \over log_c \ a} (a,b,c > 0, \ a ≠ 1, c ≠ 1)$</font> <br />
+			c 底数可以是任意>0且≠0的数, 但一般处理为 10 或 e, 例如$x \ lg3 ≈ 0.4771x$
+		</div>
+		
+		<br />
+		<h3>4.2.3对数函数的性质与图像</h3>
+		<h4>1.对数函数</h4>
+		<div class="code_block">
+			$y = log_a \ x$ 称为<font color="red">对数函数</font>(a是常数, a>0, a ≠ 1). <br />
+			<font color="red">$y = log_a \ x$</font> 与 <font color="red">$y = log_{1 \over a} \ x$</font> 函数<font color="red">沿 X 轴对称</font>. <br />
+			∵ $y = log_{1 \over a} x = log_{a^-1} x = {log x \over log a^{-1}} = {log x \over -log a} = -log_a x$ <br />
+			<br />
+			当 a > 1, $y = log_a x$ 是<font color="red">增函数</font>. <br />
+			当 0 < a < 1, $y = log_a x$ 是<font color="red">减函数</font>. <br />
+			见下图1:
+		</div>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="logfunction1" style="width: 400px;height:400px;"></div>
+		<script type="text/javascript">
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById('logfunction1'));
+			
+			 var option;
+			 function func(x) {
+			   return Math.log(x, 2);
+			   return Math.log2(x);//这个函数画出来不对
+			 }
+			 function func1(x) {
+				 //为什么这个计算的不对?
+			   return Math.log(x, 0.5);
+			 }
+			 function generateData() {
+			   let data = [];
+			   for (let i = 0; i <= 20; i += 0.01) {
+				 data.push([i, func(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData1() {
+			   let data = [];
+			   for (let i = 0; i <= 20; i += 0.01) {
+				 data.push([i, -func(i)]);
+				 // data.push([i, func1(i)]);
+			   }
+			   return data;
+			 }
+			 option = {
+			   animation: false,
+			   grid: {
+				 // 图表距4个边的距离
+				 top: 40,
+				 left: 50,
+				 right: 40,
+				 bottom: 50
+			   },
+			   xAxis: {
+				 name: 'x轴',
+				 minorTick: {
+				   // 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+				   // 是否显示次分隔线。默认不显示(网格竖着那条线)
+				   show: true
+				 }
+			   },
+			   yAxis: {
+				 name: '                                                                      y轴(图1, 对数函数, 增函数和减函数, 必过[1, 0]点)',
+				 min: -5,
+				 max: 5,
+				 minorTick: {
+					// 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+					// 是否显示次分隔线。默认不显示(网格横着那条线)
+				   show: true
+				 }
+			   },
+			   dataZoom: [
+				 // 缩放
+				 {
+				   show: true,
+				   // inside: 将缩放组件内置在坐标系中
+				   type: 'inside',
+				   filterMode: 'none',
+				   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+				   xAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 },
+				 {
+				   show: true,
+				   type: 'inside',
+				   filterMode: 'none',
+				   yAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 }
+			   ],
+			   series: [
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData1()
+				 }
+			   ]
+			 };
+			 
+			 option && myChart.setOption(option);
+		</script>
+		
+		<h4>2.用信息技术作对数函数的图像</h4>
+		
+		
+		<br />
 		<h2>4.3指数函数与对数函数的关系</h2>
 		
 		<h2>4.4幂函数</h2>

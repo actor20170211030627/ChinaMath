@@ -4,18 +4,15 @@
 		<meta charset="utf-8">
 		<title>高中数学</title>
 		<link rel="stylesheet" href="../../css/code_black.css" />
-		<!-- MathJax数学公式 -->
-		<script src="../../js/load-mathjax.js" async></script>
-		<!-- echarts图表: https://github.com/apache/echarts,
-		     https://echarts.apache.org/zh/index.html -->
-		<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
 	</head>
 	
 	<body>
 		<h1>高中数学</h1>
 		<hr />
 		<pre>
-			符号备份: ⊂⊃⊄⊅⊆⊇⊈⊉⫅⫋⊊⊋⊌⊍⊎   ∈∉∊∋∌∍   ∩∪ ∅  ⇒⇔⇍ ⇎ ⇏ ⇐(输入双箭头查找)
+			符号备份: ⊂⊃⊄⊅⊆⊇⊈⊉⫅⫋⊊⊋⊌⊍⊎   ∈∉∊∋∌∍   ∩∪ ∅
+			⇒⇔⇍ ⇎ ⇏ ⇐(输入双箭头查找)
+			α ± π
 		</pre>
 		
 		<h2>一.高一数学, 资料来自<a href="http://www.dzkbw.com/books/gaoyi-shuxue/" target="_blank">高一数学电子课本</a></h2>
@@ -35,129 +32,29 @@
 		<div class="code_block">
 			<h4>4.第四章 <a href="4function2.html" target="_blank">指数函数、对数函数与幂函数</a></h4>
 			
-			<h4>5.第五章 <a href="" target="_blank">统计与概率</a></h4>
+			<h4>5.第五章 <a href="5StatisticsAndProbability.html" target="_blank">统计与概率</a>(还未完成)</h4>
 
-			<h4>6.第六章 <a href="" target="_blank">平面向量初步</a></h4>
+			<h4>6.第六章 <a href="6PlaneVector.html" target="_blank">平面向量初步</a>(还未完成)</h4>
 		</div>
 		
 		
-		
-		
-		
-		
-		
-		内容太多, 一时半会整理补全...
 		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		
-		
-		
-		<h3>1.自然对数ln</h3>
+		<h3>第三册(B版)</h3>
 		<div class="code_block">
-			$log_e \ N = lnN$ <br />
-			$lnN = x   <=>   e^x = N$ <br />
-			$e = {lim \over {n \rightarrow \infty}} (1 + {1 \over x})^n ≈ 2.71828...$
-		</div>
-		<div>下方是自然对数 y = ln(x);</div>
-		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-		<div id="sinx" style="width: 400px;height:400px;"></div>
-		<script type="text/javascript">
-			// 基于准备好的dom，初始化echarts实例
-			var myChart = echarts.init(document.getElementById('sinx'));
+			<h4>7.第七章 <a href="7triangleFunction.html" target="_blank">三角函数</a></h4>
 			
-			 var option;
-			 function func(x) {
-				 //返回数的自然对数（底为e）
-			   return Math.log(x);
-			 }
-			 function generateData() {
-			   let data = [];
-			   for (let i = 0; i <= 10; i += 0.01) {
-				 data.push([i, func(i)]);
-			   }
-			   return data;
-			 }
-			 option = {
-			   animation: false,
-			   grid: {
-				 // 图表距4个边的距离
-				 top: 40,
-				 left: 50,
-				 right: 40,
-				 bottom: 50
-			   },
-			   xAxis: {
-				 name: 'x轴',
-				 minorTick: {
-				   // 坐标轴次刻度线
-				   show: true
-				 },
-				 minorSplitLine: {
-				   // 是否显示次分隔线。默认不显示(网格竖着那条线)
-				   show: true
-				 }
-			   },
-			   yAxis: {
-				 name: 'y轴',
-				 min: -5,
-				 max: 5,
-				 minorTick: {
-					// 坐标轴次刻度线
-				   show: true
-				 },
-				 minorSplitLine: {
-					// 是否显示次分隔线。默认不显示(网格横着那条线)
-				   show: true
-				 }
-			   },
-			   dataZoom: [
-				 // 缩放
-				 {
-				   show: true,
-				   // inside: 将缩放组件内置在坐标系中
-				   type: 'inside',
-				   filterMode: 'none',
-				   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
-				   xAxisIndex: [0],
-				   startValue: -20,
-				   endValue: 20
-				 },
-				 {
-				   show: true,
-				   type: 'inside',
-				   filterMode: 'none',
-				   yAxisIndex: [0],
-				   startValue: -20,
-				   endValue: 20
-				 }
-			   ],
-			   series: [
-				 {
-				   // 显示类型, line线
-				   type: 'line',
-				   // 是否显示绘制的点
-				   showSymbol: false,
-				   // 超出界限外的是否裁剪掉
-				   clip: true,
-				   data: generateData()
-				 }
-			   ]
-			 };
-			 
-			 option && myChart.setOption(option);
-		</script>
+			<h4>8.第八章 <a href="8vectorAndProduct.html" target="_blank">向量的数量积与三角恒等变换</a>(还未完成)</h4>
+		</div>
+		
+		
+		<br />
+		<h3>第四册(B版)</h3>
+		<div class="code_block">
+			<h4>9.第九章 <a href="9triangle.html" target="_blank">解三角形</a>(还未完成)</h4>
+			
+			<h4>10.第十章 <a href="10plural.html" target="_blank">复数</a>(还未完成)</h4>
+
+			<h4>11.第十一章 <a href="11solidGeometry.html" target="_blank">立体几何初步</a>(还未完成)</h4>
+		</div>
 	</body>
 </html>

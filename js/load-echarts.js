@@ -14,7 +14,7 @@
 //UncaughtReferenceError: echarts is not defined...
 (function () {
   var script = document.createElement('script');
-  script.src = 'https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js';
+  script.src = 'https://cdn.staticfile.org/echarts/5.2.1/echarts.min.js';
   script.async = false;
   document.head.appendChild(script);
 })();
@@ -26,4 +26,4 @@
 //...
 //<!-- echarts图表: https://github.com/apache/echarts,
 //     https://echarts.apache.org/zh/index.html -->
-//<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+//<script src="https://cdn.staticfile.org/echarts/5.2.1/echarts.min.js"></script>

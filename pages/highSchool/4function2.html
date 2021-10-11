@@ -8,7 +8,7 @@
 		<script src="../../js/load-mathjax.js" async></script>
 		<!-- echarts图表: https://github.com/apache/echarts,
 		     https://echarts.apache.org/zh/index.html -->
-		<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+		<script src="https://cdn.staticfile.org/echarts/5.2.1/echarts.min.js"></script>
 	</head>
 	
 	<body>
@@ -28,6 +28,7 @@
 			整数指数幂运算的运算法则有 <br />
 			<font color="red">$a^ma^n = a^{m+n}$, ${a^m \over a^n} = a^{m-n}$ <br />
 			$(a^m)^n = a^{mn}$, $(ab)^m = a^mb^m$</font> <br />
+			<font color="red">$({a \over b})^n = {a^n \over b^n}$</font> <br />
 			<br />
 			
 			2.另外,初中我们还学习了平方根和立方根. <br />
@@ -55,6 +56,7 @@
 		<h4>1.指数函数</h4>
 		<div class="code_block">
 			<font color="red">$y = a^x$ (a是常数, a ＞0, 且 a ≠ 1)</font> <br />
+			指数函数必过 <font color="red">(0, 1)</font> 点. <br />
 			例: $y = 2^x$, 见下图1
 		</div>
 		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
@@ -216,12 +218,12 @@
 			
 			 var option;
 			 function func(x) {
-			   return Math.log(x, 2);
-			   return Math.log2(x);//这个函数画出来不对
+				 //log2 x
+			   return Math.log2(x);
 			 }
 			 function func1(x) {
-				 //为什么这个计算的不对?
-			   return Math.log(x, 0.5);
+				 //log0.5 x
+			   return Math.log(x) / Math.log(0.5);
 			 }
 			 function generateData() {
 			   let data = [];
@@ -233,8 +235,7 @@
 			 function generateData1() {
 			   let data = [];
 			   for (let i = 0; i <= 20; i += 0.01) {
-				 data.push([i, -func(i)]);
-				 // data.push([i, func1(i)]);
+				 data.push([i, func1(i)]);
 			   }
 			   return data;
 			 }
@@ -322,10 +323,468 @@
 		
 		<br />
 		<h2>4.3指数函数与对数函数的关系</h2>
+		<div class="code_block">
+			&emsp; 如果在函数y=f(x)中, 给定值域中任意一个y的值. 只有唯一的x与之对应,
+			那么x是y的函数. 这个函数称为y=f(x)的<font color="red">反函数</font>. <br />
+			&emsp; 此时, 称y=f(x)存在反函数. 而且, 如果函数的自变量仍用x表示, 因变量仍用y表示,
+			则函数y=f(x)的反函数的表达式, 可以通过对调 y=f(x) 中的x与y. 然后从 x=f(y) 中求出y得到. <br />
+			<br />
+			例如, $y=2^x$ 是增函数. 因此任意给定一个y值, 只有唯一的x与之对应, 所以y=2存在反函数.
+			对调 $y=2^x$ 中的x和y得 $x=2^y$, 解得  $y=log_2 \ x$. <br />
+			因此, $y = log_2 \ x$ 是 $y = 2^x$ 的反函数. 函数图像如下图1 <br />
+			<br />
+			函数 <font color="red">$y=f(x)$ 的反函数记作 $y=f^{-1}(x)$</font>. <br />
+			值得注意的是, <font color="red">$y=f(x)$ 的定义域与 $y=f^{-1}(x)$ 的值域相同</font>, <br />
+			<font color="red">$y=f(x)$ 的值域与 $y=f^{-1}(x)$ 的定义域相同</font>, <br />
+			$y=f(x)$ 与 $y=f^{-1}(x)$ 的图像<font color="red">关于直线 $y=x$ 对称</font>. <br />
+			<br />
+			判断 $f(x) = 2x + 2$ 的是否有反函数, 如果存在, 写出反函数 $f^{-1} (x)$ 的解析式. <br />
+			解: <br />
+			&emsp; 因为 $f(x) = 2x + 2$ 是增函数, 因此任意给定值域中的一个值, 只有唯一的x与之对应, 所以f(x)存在反函数. <br />
+			令 $y = 2x + 2$, 对调其中的x和y得 $x = 2y + 2$, 解得 $y = {1 \over 2} x - 1$ <br />
+			因此 $f^{-1} (x) = {1 \over 2} x - 1$ <br />
+			f(x)与 $f^{-1}(x)$ 的函数图像如下图2
+		</div>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="positiveNegative1" style="width: 400px;height:400px;"></div>
+		<script type="text/javascript">
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById('positiveNegative1'));
+			
+			 var option;
+			 function func(x) {
+				 //y = 2^x
+			   return Math.pow(2, x);
+			 }
+			 function func1(x) {
+				 //y = log2 x
+				 return Math.log2(x);
+			 }
+			 function generateData() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData1() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func1(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData3() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, i]);
+			   }
+			   return data;
+			 }
+			 option = {
+			   animation: false,
+			   grid: {
+				 // 图表距4个边的距离
+				 top: 40,
+				 left: 50,
+				 right: 40,
+				 bottom: 50
+			   },
+			   xAxis: {
+				 name: 'x轴',
+				 min: -12,
+				 max: 12,
+				 minorTick: {
+				   // 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+				   // 是否显示次分隔线。默认不显示(网格竖着那条线)
+				   show: true
+				 }
+			   },
+			   yAxis: {
+				 name: 'y轴(图1, 正函数与反函数, 沿 y=x 对称)',
+				 min: -12,
+				 max: 12,
+				 minorTick: {
+					// 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+					// 是否显示次分隔线。默认不显示(网格横着那条线)
+				   show: true
+				 }
+			   },
+			   dataZoom: [
+				 // 缩放
+				 {
+				   show: true,
+				   // inside: 将缩放组件内置在坐标系中
+				   type: 'inside',
+				   filterMode: 'none',
+				   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+				   xAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 },
+				 {
+				   show: true,
+				   type: 'inside',
+				   filterMode: 'none',
+				   yAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 }
+			   ],
+			   series: [
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData1()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData3()
+				 }
+			   ]
+			 };
+			 option && myChart.setOption(option);
+		</script>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="positiveNegative2" style="width: 400px;height:400px;"></div>
+		<script type="text/javascript">
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById('positiveNegative2'));
+			
+			 var option;
+			 function func(x) {
+			   return 2 * x + 2;
+			 }
+			 function func1(x) {
+				 return x / 2.0 - 1;
+			 }
+			 function generateData() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData1() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func1(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData3() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, i]);
+			   }
+			   return data;
+			 }
+			 option = {
+			   animation: false,
+			   grid: {
+				 // 图表距4个边的距离
+				 top: 40,
+				 left: 50,
+				 right: 40,
+				 bottom: 50
+			   },
+			   xAxis: {
+				 name: 'x轴',
+				 min: -12,
+				 max: 12,
+				 minorTick: {
+				   // 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+				   // 是否显示次分隔线。默认不显示(网格竖着那条线)
+				   show: true
+				 }
+			   },
+			   yAxis: {
+				 name: 'y轴(图2, 正函数与反函数, 沿 y=x 对称)',
+				 min: -12,
+				 max: 12,
+				 minorTick: {
+					// 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+					// 是否显示次分隔线。默认不显示(网格横着那条线)
+				   show: true
+				 }
+			   },
+			   dataZoom: [
+				 // 缩放
+				 {
+				   show: true,
+				   // inside: 将缩放组件内置在坐标系中
+				   type: 'inside',
+				   filterMode: 'none',
+				   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+				   xAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 },
+				 {
+				   show: true,
+				   type: 'inside',
+				   filterMode: 'none',
+				   yAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 }
+			   ],
+			   series: [
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData1()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData3()
+				 }
+			   ]
+			 };
+			 option && myChart.setOption(option);
+		</script>
 		
+		
+		<br />
 		<h2>4.4幂函数</h2>
+		<div class="code_block">
+			函数 <font color="red">$y = x^a$ 称为幂函数</font>, a 为常数. <br />
+			以下都是幂函数: <br />
+			$y = x, \ y = x^2, \ y = {1 \over x}(= x^{-1}), \ y = x^{1 \over 2}(= \sqrt[2]{x^1} = \sqrt[]{x})$ <br />
+			<br />
+			共同特征: <br />
+			1.所有幂函数在区间 <font color="red">(0, +$\infty$) 上都有定义</font>, 因此第一象限内都有图像,
+			  且所有图像<font color="red">都经过点(1, 1)</font>. <br />
+			2.如果<font color="red">a > 0</font>, 则幂函数的图像<font color="red">通过原点</font>,
+			且在区间 <font color="red">[0, +$\infty$) 是增函数</font>. <br />
+			3.如果 <font color="red">a < 0</font>, 则幂函数在区间 <font color="red">(0, +$\infty$) 上是减函数</font>. <br />
+			见下方图像1
+		</div>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="powerFunction1" style="width: 400px;height:400px;"></div>
+		<script type="text/javascript">
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById('powerFunction1'));
+			
+			 var option;
+			 function func(x) {
+				 return Math.pow(x, 0.5);
+			 }
+			 function func1(x) {
+				 return Math.pow(x, 3);
+			 }
+			 function func2(x) {
+				 return - (Math.pow(x, -3));
+				 //TODO 本来是想绘制下方这个函数, 但是这个函数在x是负数时,
+				 // 绘制不出来, 所有有上方↑的这行代码, 应该是echart的bug?
+				 var y = Math.pow(x, -2);
+				 // console.log('x = ' + x, 'y = ' + y);
+				 return y;
+				 // return 1 / (x * x);
+			 }
+			 function func3(x) {
+				 return Math.pow(x, -2);
+			 }
+			 function generateData() {
+			   let data = [];
+			   for (let i = 0; i <= 10; i += 0.001) {
+				 data.push([i, func(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData1() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func1(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData2() {
+			   let data = [];
+			   for (let i = -10; i <= 0; i += 0.1) {
+				 data.push([i, func2(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData3() {
+			   let data = [];
+			   for (let i = 0; i <= 10; i += 0.01) {
+				 data.push([i, func3(i)]);
+			   }
+			   return data;
+			 }
+			 option = {
+			   animation: false,
+			   grid: {
+				 // 图表距4个边的距离
+				 top: 40,
+				 left: 50,
+				 right: 40,
+				 bottom: 50
+			   },
+			   xAxis: {
+				 name: 'x轴',
+				 min: -12,
+				 max: 12,
+				 minorTick: {
+				   // 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+				   // 是否显示次分隔线。默认不显示(网格竖着那条线)
+				   show: true
+				 }
+			   },
+			   yAxis: {
+				 name: 'y轴(图1, 幂函数)',
+				 min: -12,
+				 max: 12,
+				 minorTick: {
+					// 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+					// 是否显示次分隔线。默认不显示(网格横着那条线)
+				   show: true
+				 }
+			   },
+			   dataZoom: [
+				 // 缩放
+				 {
+				   show: true,
+				   // inside: 将缩放组件内置在坐标系中
+				   type: 'inside',
+				   filterMode: 'none',
+				   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+				   xAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 },
+				 {
+				   show: true,
+				   type: 'inside',
+				   filterMode: 'none',
+				   yAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 }
+			   ],
+			   series: [
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData1()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData2()
+				 }
+				 ,
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData3()
+				 }
+			   ]
+			 };
+			 option && myChart.setOption(option);
+		</script>
+		
+		<h4>2.用信息技术作幂函数的图像</h4>
+		
+		
+		<br />
 		<h2>4.5增长速度的比较</h2>
+		<div class="code_block">
+			一家世界500强公司曾经岀过类似这样的一道面试题: <br />
+			&emsp; 有一套房子, 价格为200万元, 假设房价每年上涨10%, 某人每年固定能攒下40万元,
+			如果他想买这套房子, 在不贷款、收入不增加的前提下, 这个人需要多少年才能攒够钱买这套房子? <br />
+			(A)5年 (B) 7年 (C)8年 (D)9年 (E)永远也买不起
+		</div>
+		
+		<br />
 		<h2>4.6函数的应用(二)</h2>
+		<div class="code_block">
+			1.有些银行存款是按复利的方式计算利息的, 即把前一期的利息与本金加在一起作为本金, 再计算下一期的利息.
+			假设最开始本金为a元,每期的利率为r, 存x期后本息和为f(x)元. <br />
+			(1)写出∫(x)的解析式; <br />
+			(2)至少要经过多少期后, 本息和才能不小于本金的2倍? <br />
+			<br />
+			2.还有一些例子...
+		</div>
+		
+		<br />
 		<h2>4.7数学建模活动:生长规律的描述</h2>
+		<br />
 	</body>
 </html>

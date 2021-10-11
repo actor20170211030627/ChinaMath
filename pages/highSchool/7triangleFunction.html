@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>第七章 三角函数</title>
+		<link rel="stylesheet" href="../../css/code_black.css" />
+		<!-- MathJax数学公式 -->
+		<script src="../../js/load-mathjax.js" async></script>
+		<!-- echarts图表: https://github.com/apache/echarts,
+		     https://echarts.apache.org/zh/index.html -->
+		<script src="https://cdn.staticfile.org/echarts/5.2.1/echarts.min.js"></script>
+	</head>
+	
+	<body>
+		<h1>第七章 三角函数</h1>
+		<hr />
+		
+	　　<h2>7.1 任意角的概念与弧度制</h2>
+	　　<h3>7.1.1 角的推广</h3>
+		<h4>1.角的概念的推广</h4>
+		<div class="code_block">
+			&emsp; 角的概念的推广: 一条射线绕其端点旋转到另一条射线所形成的图形称为角, 这两条射线分别称为角的始边和终边.
+			射线的旋转有两个相反的方向: 顺时针方向和逆时针方向. 习惯上规定, 按照<font color="red">逆时针方向旋转而成的角称为正角</font>;
+			按照<font color="red">顺时针方向旋转而成的角称为负角</font>; 当射线<font color="red">没有旋转时</font>, 我们也把它看成一个角, 称为<font color="red">零角</font>. <br />
+			&emsp; 这样定义的角,由于是旋转生成的, 所以也常称为转角. <br />
+			值得注意的是, 上述角的定义中, 当射线绕其端点按逆时针方向或按顺时针方向旋转时, 旋转的绝对量可以是任意的.
+			因此, 角的概念经过以上的推广以后, 就包括<font color="red">正角、负角、零角</font>.也就是说, 角的大小是任意的.
+			由此, 我们把角的概念推广到了任意角.
+		</div>
+		
+		<br />
+		<h4>2.象限角</h4>
+		<div class="code_block">
+			右上角是第1象限, 左上角是第2象限, 左下角是第3象限, 右下角是第4象限.
+		</div>
+		
+		<br />
+	　　<h3>7.1.2 弧度制及其与角度制的换算</h3>
+		<h4>1.弧度制</h4>
+		<div class="code_block">
+			角除了使用<font color="red">角度</font>来度量外, 还可以使用<font color="red">弧度</font>来度量. <br />
+			<br />
+			<font color="red">角度制:</font> 使用角度来度量角时, 是把圆周等分成360份, 其中每一份所对应的圆心角为1度, 这种用度作单位来度量角的制度称为角度制.
+			角度制还规定1度等于60分, 1分等于60秒, 即 <br />
+			<font color="red">1°=60′, 1′=60″</font> <br />
+			<br />
+			<font color="red">弧度制:</font> <br />
+			<img src="../../img/7111.jpg" /><a href="https://mp.weixin.qq.com/s/4Lv5srftyCEOo-5WhVvYaw" target="_blank">图片来源</a> <br />
+			${弧的长度 \over 弧的半径} =$ ${\begin{matrix}
+			⌒\\
+			{AB}\\
+			\end{matrix} \over OA}
+			=
+			{\begin{matrix}
+			⌒\\
+			{A′B′}\\
+			\end{matrix} \over OA′}
+			$ = <font color="red">弧度数</font>(定值) <br />
+			设弧的角度 $\alpha$ = n°, 弧长l, 半径r: <br />
+			<font color="red">${l \over r}$</font> = ${2 \pi r} \ * \ n \over 360 \ * \ r$<font color="red"> = $n {2\pi \over 360}$</font> <br />
+			<br />
+			我们称弧长与半径比值的这个常数为圆心角的<font color="red">弧度数</font>. <br />
+			长度等于半径长的圆弧所对的圆心角为<font color="red">1弧度的角</font>, 记作<font color="red">1rad</font>. <br />
+			如图7-1-9所示, 因为∠AOB 就是1弧度的角. <br />
+			<img src="../../img/71112.jpg" /><a href="https://mp.weixin.qq.com/s/4Lv5srftyCEOo-5WhVvYaw" target="_blank">图片来源</a> <br />
+			<br />
+			<font color="red">弧度制:</font>这样规定出来的1弧度的角大小是完全确定的, 这种以弧度为单位来度量角的制度称为弧度制. <br />
+			1rad = $360 * r \over 2 \pi r$ = $180 \over \pi$ ≈ ‪57.29578‬°
+		</div>
+		
+		<br />
+		<h4>2.弧度制与角度制的换算</h4>
+		<div class="code_block">
+			因为半径为r的圆周长为 $2\pi r$, 所以周角的弧度数是$2\pi r \over r$=$2\pi$, 于是$360° = 2\pi \ rad$, 因此<font color="red">$180° = \pi \ rad$</font>. <br />
+			由此容易得到弧度制与角度制的换算公式: <br />
+			设一个角的角度数为n, 弧度数为a, 则 <br />
+			∵ 一个圆的弧度数 = $2 \pi \ rad$ <br />
+			∴ ${n \over 360} = {a \over 2\pi}$ <br />
+			⇒ <font color="red">${n \over 180} = {a \over \pi}$</font> <br />
+			<br />
+			因此, 0 rad角就是0°角, 它的终边在x轴的正半轴上; <br />
+			${2 \over \pi} rad$ 角就是90°角, 它的终边在y轴的正半轴上; <br />
+			$\pi \ rad$ 角就是180角, 它的终边在x轴的负半轴上; <br />
+			${3 \pi \over 2} rad$ 角就是270角, 它的终边在y轴的负半轴上.
+		</div>
+		<h4>3.用信息技术进行弧度制与角度制的换算</h4>
+		
+		<br />
+	　　<h2>7.2 任意角的三角函数</h2>
+	　　<h3>7.2.1 三角函数的定义</h3>
+		<h4>1.任意角的正弦, 余弦与正切的定义</h4>
+		<div class="code_block">
+			<img src="../../img/72111.png" /><a href="https://www.bilibili.com/video/BV1G7411A72i?p=10" target="_blank">参考视频</a> <br />
+			$sin α = {a \over c}$ <br />
+			$cos α = {b \over c}$ <br />
+			$tan α = {a \over b}$ <br />
+			$sin β = sin(180‬° - β) = {a \over c}$ <br />
+			$cos β = cos(180‬° - β) = {b \over c}$ <br />
+			$tan β = tan(180‬° - β) = {a \over b}$ <br />
+		</div>
+		<h4>2.正弦, 余弦与正切在各象限的符号</h4>
+		<div class="code_block">
+			sin x: 1,2 象限值>0, 正. &emsp; 3,4象限 负 <br />
+			cos x: 1,4 象限值>0, 正. &emsp; 2,3象限 负 <br />
+			tan x: 1,3 象限值>0, 正. &emsp; 2,4象限 负
+		</div>
+		
+		<br />
+	　　<h3>7.2.2 单位圆与三角函数线</h3>
+		<h4>1.正弦线与余弦线</h4>
+		<div class="code_block">
+			<img src="../../img/72211.jpg" /><a href="https://mp.weixin.qq.com/s/4Lv5srftyCEOo-5WhVvYaw" target="_blank">图片来源</a> <br /> <br />
+			设圆的半径 = 1: <br />
+			sin $\alpha$ = $\overrightarrow {MP} \over 1$ = $\overrightarrow {MP}$ <br />
+			cos $\alpha$ = $\overrightarrow {OM} \over 1$ = $\overrightarrow {OM}$ <br />
+			$\overrightarrow {OM}$ 为角 $\alpha$ 的<font color="red">余弦线</font>. <br />
+			$\overrightarrow {MP}$ 为角 $\alpha$ 的<font color="red">正弦线</font>. <br />
+		</div>
+		<h4>2.正切线</h4>
+		<div class="code_block">
+			<img src="../../img/72221.jpg" /><a href="https://mp.weixin.qq.com/s/4Lv5srftyCEOo-5WhVvYaw" target="_blank">图片来源</a> <br />
+			设 OA = 1: <br />
+			tan $\alpha$ = $\overrightarrow {AT} \over OA$ = $\overrightarrow {AT}$ <br />
+			tan $\beta$ = $\overrightarrow {AS} \over OA$ = $\overrightarrow {AS}$ <br />
+			$\overrightarrow {AT}$ 为角 $\alpha$ 的<font color="red">正切线</font>. <br />
+			$\overrightarrow {AS}$ 为角 $\beta$ 的<font color="red">正切线</font>. <br />
+		</div>
+		
+		<br />
+	　　<h3>7.2.3 同角三角函数的基本关系式</h3>
+		<div class="code_block">
+			$sin \alpha = {x \over z}$, $cos \alpha = {y \over z}$, $tan \alpha = {x \over y}$ <br /> 
+			⇒ <font color="red">$sin^2 \alpha + cos^2 \alpha = 1$</font> <br />
+			⇒ <font color="red">$tan \alpha = {sin \ \alpha \over cos \ \alpha}$</font> <br />
+		</div>
+		
+		<br />
+	　　<h3>7.2.4 诱导公式</h3>
+		<h4>1.角$\alpha$与$\alpha + k * 2 \pi$(k∈Z)的三角函数值之间的关系</h4>
+		<div class="code_block">
+			在初中,我们已经知道一些锐角的三角函数值及它们之间的一些关系, 例如, <br />
+			sin30° = cos60° = $1 \over 2$, <br />
+			sin45° = $\sqrt 2 \over 2$, <br />
+			sin60° = cos30° = $\sqrt 3 \over 2$ <br />
+			<br />
+			<font color="red">
+				sin(α + k·2π) = sina α <br />
+				cos(α + k·2π) = cosa α <br />
+				tan(α + k·2π) = tana α
+			</font>
+		</div>
+		<h4>2.角的旋转对称</h4>
+		<h4>3.角α与-α的三角函数值之间的关系</h4>
+		<div class="code_block">
+			<font color="red">
+				sin (-α) = - sin α <br />
+				cos α = - cos α <br />
+				tan (-α) = - tan α <br />
+			</font>
+		</div>
+		<h4>4.角α与π±α的三角函数值之间的关系</h4>
+		<div class="code_block">
+			<font color="red">
+				sin (π-α) = sin α <br />
+				cos (π-α) = - cos α <br />
+				tan (π-α) = - tan α <br />
+				<br />
+				sin (π+α) = - sin α <br />
+				cos (π+α) = - cos α <br />
+				tan (π+α) = tan α <br />
+			</font>
+		</div>
+		<h4>5.角α与$π \over 2$-α的三角函数值之间的关系</h4>
+	　　<div class="code_block">
+			<font color="red">
+				sin ($π \over 2$-α) = cos α <br />
+				cos ($π \over 2$-α) = sin α <br />
+				tan ($π \over 2$-α) = cot α <br />
+			</font>
+		</div>
+		<h4>6.其它一些三角函数值之间的关系</h4>
+		<div class="code_block">
+			<font color="red">
+				sin ($π \over 2$+α) = cos α <br />
+				cos ($π \over 2$+α) = - sin α <br />
+				tan ($π \over 2$+α) = - cot α <br />
+				...
+			</font>
+		</div>
+		
+		<br />
+		<h2>7.3 三角函数的性质与图像</h2>
+	　　<h3>7.3.1 正弦函数的性质与图像</h3>
+		<h4>1.正弦函数的性质</h4>
+		<div class="code_block">
+			1.定义域与值域: 定义域 ∈ R, 值域[-1, 1] <br />
+			2.奇函数: 关于原点对称 <br />
+			3.周期性: sin(x + k.2π) = sin x (k ∈ z) <br />
+			4.单调性: 在某个区间递增/递减. <br />
+			5.正弦函数的零点: y = sin x 的零点为kπ (k ∈ z)
+		</div>
+		<h4>2.正弦函数的图像(<font color="red">x轴的单位是幅度: rad</font>)</h4>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="sinx1" style="width: 400px;height:400px;"></div>
+		<script type="text/javascript">
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById('sinx1'));
+			
+			 var option;
+			 function func(x) {
+				 return Math.sin(x);
+			 }
+			 function generateData() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func(i)]);
+			   }
+			   return data;
+			 }
+			 option = {
+			   animation: false,
+			   grid: {
+				 // 图表距4个边的距离
+				 top: 40,
+				 left: 50,
+				 right: 40,
+				 bottom: 50
+			   },
+			   xAxis: {
+				 name: 'x轴',
+				 minorTick: {
+				   // 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+				   // 是否显示次分隔线。默认不显示(网格竖着那条线)
+				   show: true
+				 }
+			   },
+			   yAxis: {
+				 name: 'y轴(图1, 正弦函数)',
+				 min: -5,
+				 max: 5,
+				 minorTick: {
+					// 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+					// 是否显示次分隔线。默认不显示(网格横着那条线)
+				   show: true
+				 }
+			   },
+			   dataZoom: [
+				 // 缩放
+				 {
+				   show: true,
+				   // inside: 将缩放组件内置在坐标系中
+				   type: 'inside',
+				   filterMode: 'none',
+				   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+				   xAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 },
+				 {
+				   show: true,
+				   type: 'inside',
+				   filterMode: 'none',
+				   yAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 }
+			   ],
+			   series: [
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData()
+				 }
+			   ]
+			 };
+			 
+			 option && myChart.setOption(option);
+		</script>
+		<h4>3.用信息技术作正弦曲线</h4>
+		
+		<br />
+	　　<h3>7.3.2 正弦型函数的性质与图像</h3>
+		<div class="code_block">
+			y = Asin(ωx + ϕ) (A ≠ 0, ω ≠ 0) 的定义域为R: <br />
+			<font color="red">值域: [-|A|, |A|]</font> <br />
+			<font color="red">周期: $2π \over ω$</font> <br />
+			<font color="red">像左位移: $ϕ \over ω$ (结果>0: 左移.  结果<0: 右移)</font> <br />
+			<br />
+			如下图1, 分别是以下4个正弦函数: <br />
+			y = sin x <br />
+			y = sin 2x <br />
+			y = 3sin 2x <br />
+			y = 3sin (2x + $\pi \over 3$) <br />
+		</div>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="sinx2" style="width: 400px;height:400px;"></div>
+		<script type="text/javascript">
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById('sinx2'));
+			
+			 var option;
+			 function func(x) {
+				 return Math.sin(x);
+			 }
+			 function func1(x) {
+				 return Math.sin(2 * x);
+			 }
+			 function func2(x) {
+				 return 3 * Math.sin(2 * x);
+			 }
+			 function func3(x) {
+				 return 3 * Math.sin(2 * x + Math.PI / 3);
+			 }
+			 function generateData() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData1() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func1(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData2() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func2(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData3() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func3(i)]);
+			   }
+			   return data;
+			 }
+			 option = {
+			   animation: false,
+			   grid: {
+				 // 图表距4个边的距离
+				 top: 40,
+				 left: 50,
+				 right: 40,
+				 bottom: 50
+			   },
+			   xAxis: {
+				 name: 'x轴',
+				 min: -12,
+				 max: 12,
+				 minorTick: {
+				   // 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+				   // 是否显示次分隔线。默认不显示(网格竖着那条线)
+				   show: true
+				 }
+			   },
+			   yAxis: {
+				 name: 'y轴(图1, 各种正弦函数)',
+				 min: -12,
+				 max: 12,
+				 minorTick: {
+					// 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+					// 是否显示次分隔线。默认不显示(网格横着那条线)
+				   show: true
+				 }
+			   },
+			   dataZoom: [
+				 // 缩放
+				 {
+				   show: true,
+				   // inside: 将缩放组件内置在坐标系中
+				   type: 'inside',
+				   filterMode: 'none',
+				   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+				   xAxisIndex: [0],
+				   startValue: -5,
+				   endValue: 5
+				 },
+				 {
+				   show: true,
+				   type: 'inside',
+				   filterMode: 'none',
+				   yAxisIndex: [0],
+				   startValue: -5,
+				   endValue: 5
+				 }
+			   ],
+			   series: [
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData1()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData2()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData3()
+				 }
+			   ]
+			 };
+			 
+			 option && myChart.setOption(option);
+		</script>
+	
+		<br />
+	　　<h3>7.3.3 余弦函数的性质与图修</h3>
+		<h4>1.余弦函数的性质</h4>
+		<div class="code_block">
+			1.定义域与值域: 定义域 ∈ R, 值域[-1, 1] <br />
+			2.偶函数: 关于Y轴对称 <br />
+			3.周期性: cos(x + k.2π) = cos x (k ∈ z) <br />
+			4.单调性: 在某个区间递增/递减. <br />
+			5.余弦函数的零点: y = cos x 的零点为kπ + $π \over 2$ (k ∈ z)
+		</div>
+		<h4>2.余弦函数的图像(x轴的单位是幅度: rad)</h4>
+		<div class="code_block">
+			y = Acos(ωx + ϕ) (A ≠ 0, ω ≠ 0) 的定义域为R: <br />
+			<font color="red">值域: [-|A|, |A|]</font> <br />
+			<font color="red">周期: $2π \over ω$</font> <br />
+			<font color="red">像左位移: $ϕ \over ω$ (结果>0: 左移.  结果<0: 右移)</font> <br />
+			<br />
+			如下图1, 分别是以下4个余弦函数: <br />
+			y = cos x <br />
+			y = cos 2x <br />
+			y = 3cos 2x <br />
+			y = 3cos (2x + $\pi \over 3$) <br />
+		</div>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="cosx1" style="width: 400px;height:400px;"></div>
+		<script type="text/javascript">
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById('cosx1'));
+			
+			 var option;
+			 function func(x) {
+				 return Math.cos(x);
+			 }
+			 function func1(x) {
+				 return Math.cos(2 * x);
+			 }
+			 function func2(x) {
+				 return 3 * Math.cos(2 * x);
+			 }
+			 function func3(x) {
+				 return 3 * Math.cos(2 * x + Math.PI / 3);
+			 }
+			 function generateData() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData1() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func1(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData2() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func2(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData3() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func3(i)]);
+			   }
+			   return data;
+			 }
+			 option = {
+			   animation: false,
+			   grid: {
+				 // 图表距4个边的距离
+				 top: 40,
+				 left: 50,
+				 right: 40,
+				 bottom: 50
+			   },
+			   xAxis: {
+				 name: 'x轴',
+				 min: -12,
+				 max: 12,
+				 minorTick: {
+				   // 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+				   // 是否显示次分隔线。默认不显示(网格竖着那条线)
+				   show: true
+				 }
+			   },
+			   yAxis: {
+				 name: 'y轴(图1, 各种余弦函数)',
+				 min: -12,
+				 max: 12,
+				 minorTick: {
+					// 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+					// 是否显示次分隔线。默认不显示(网格横着那条线)
+				   show: true
+				 }
+			   },
+			   dataZoom: [
+				 // 缩放
+				 {
+				   show: true,
+				   // inside: 将缩放组件内置在坐标系中
+				   type: 'inside',
+				   filterMode: 'none',
+				   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+				   xAxisIndex: [0],
+				   startValue: -5,
+				   endValue: 5
+				 },
+				 {
+				   show: true,
+				   type: 'inside',
+				   filterMode: 'none',
+				   yAxisIndex: [0],
+				   startValue: -5,
+				   endValue: 5
+				 }
+			   ],
+			   series: [
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData1()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData2()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData3()
+				 }
+			   ]
+			 };
+			 
+			 option && myChart.setOption(option);
+		</script>
+		
+		<br />
+	　　<h3>7.3.4 正切函数的性质与图修</h3>
+		<h4>1.正切函数的性质</h4>
+		<div class="code_block">
+			1.定义域与值域 <br />
+			  &emsp; y = tan x 定义域: {x|x≠$\pi \over 2$+kπ, k∈R} <br />
+			2.奇偶性: 奇函数 <br />
+			3.周期性: tan(x + π) = tan x <br />
+			4.单调性: 在(-$\pi \over 2$+kπ, $\pi \over 2$+kπ) (k∈R) 上单调递增
+		</div>
+		<h4>2.正切函数的图像(如下图1 <font color="red">[由于软件关系, 下放绘制的图不应该有那条竖线]</font>)</h4>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="tanx1" style="width: 400px;height:400px;"></div>
+		<script type="text/javascript">
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById('tanx1'));
+			
+			 var option;
+			 function func(x) {
+				 return Math.tan(x);
+			 }
+			 function generateData() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+					data.push([i, func(i)]);
+			   }
+			   return data;
+			 }
+			 option = {
+			   animation: false,
+			   grid: {
+				 // 图表距4个边的距离
+				 top: 40,
+				 left: 50,
+				 right: 40,
+				 bottom: 50
+			   },
+			   xAxis: {
+				 name: 'x轴',
+				 min: -12,
+				 max: 12,
+				 minorTick: {
+				   // 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+				   // 是否显示次分隔线。默认不显示(网格竖着那条线)
+				   show: true
+				 }
+			   },
+			   yAxis: {
+				 name: 'y轴(图1, 各种正切函数)',
+				 min: -12,
+				 max: 12,
+				 minorTick: {
+					// 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+					// 是否显示次分隔线。默认不显示(网格横着那条线)
+				   show: true
+				 }
+			   },
+			   dataZoom: [
+				 // 缩放
+				 {
+				   show: true,
+				   // inside: 将缩放组件内置在坐标系中
+				   type: 'inside',
+				   filterMode: 'none',
+				   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+				   xAxisIndex: [0],
+				   startValue: -5,
+				   endValue: 5
+				 },
+				 {
+				   show: true,
+				   type: 'inside',
+				   filterMode: 'none',
+				   yAxisIndex: [0],
+				   startValue: -5,
+				   endValue: 5
+				 }
+			   ],
+			   series: [
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData()
+				 }
+			   ]
+			 };
+			 
+			 option && myChart.setOption(option);
+		</script>
+		
+		<br />
+	　　<h3>7.3.5 已知三角函数值求角</h3>
+		<h4>1.利用三角函数线求角</h4>
+		<h4>2.用信息技术求角</h4>
+	　　
+		<br />
+		<h2>7.4 数学建模活动:周期现象的描述</h2>
+	</body>
+</html>

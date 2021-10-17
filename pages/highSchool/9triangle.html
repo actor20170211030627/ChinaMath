@@ -3,6 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<title>第九章 解三角形</title>
+		<link rel="stylesheet" href="../../css/code_black.css" />
+		<!-- MathJax数学公式 -->
+		<script src="../../js/load-mathjax.js" async></script>
 	</head>
 	
 	<body>
@@ -12,8 +15,88 @@
 		
 	　　<h2>9.1 正弦定理与余弦定理</h2>
 	　　<h3>9.1.1 正弦定理</h3>
-	　　<h3>9.1.2 余弦定理</h3>
+		<div class="code_block">
+			<img src="../../img/9111.png" /><a href="https://mp.weixin.qq.com/s/PYN_JA_0YLprPunI-bRgsw">图片来源</a> <br />
+			(1)如图9-1-2所示, 已知△ABC中, a=5, b=3, ∠C=$\pi \over 3$, 你能求出这个三角形的面积吗? <br />
+			S△ABC = $1 \over 2$ a * AD; <br />
+			AD = b * sin$\pi \over 3$ <br />
+			∴ <font color="red">S△ABC = $1 \over 2$ab sinC</font> <br />
+			= $1 \over 2$ * 3 * 5 * $\sqrt 3 \over 2$ = $15\sqrt 3 \over 4$ <br />
+			<br />
+			<font color="red">S△ABC</font> = <font color="red">$1 \over 2$ab sinC</font> = <font color="red">$1 \over 2$ac sinB</font> = <font color="red">$1 \over 2$bc sinA</font> <br />
+			⇒ <font color="red">$a \over sin A$</font> = <font color="red">$b \over sin B$</font> = <font color="red">$c \over sin C$</font> = <font color="red">2r(外接圆直径)</font> <br />
+			<br />
+			<font color="red">正弦定理: </font>在一个三角形中, 各边的长和它所对角的正弦的比相等, <font color="red">等于2r(外接圆直径)</font>.
+		</div>
 		
+		<br />
+	　　<h3>9.1.2 余弦定理</h3>
+		<div class="code_block">
+			<img src="../../img/9121.png" /> <br />
+			<a href="https://mp.weixin.qq.com/s/PYN_JA_0YLprPunI-bRgsw">图片来源</a> <br />
+			<br />
+			<font color="red">
+				$c^2 = a^2 + b^2 - 2ab \ cos \ C$ <br />
+				$a^2 = b^2 + c^2 - 2bc \ cos \ A$ <br />
+				$b^2 = a^2 + c^2 - 2ac \ cos \ B$
+			</font> <br />
+			<br />
+			<font color="red">余弦定理: </font>三角形任意一边的平方, 等于其它两边的平方和减去这两边与他们夹角余弦的积的2倍. <font color="red">等于2r(外接圆直径)</font>. <br />
+			⇒ <br />
+			<font color="red">
+				cos A = $b^2 + c^2 - a^2 \over 2bc$ <br />
+				cos B = $a^2 + c^2 - b^2 \over 2ac$ <br />
+				cos C = $a^2 + b^2 - c^2 \over 2ab$
+			</font> <br />
+		</div>
+		
+		
+		<br />
+		<br />
+		<br />
+		<div class="code_block">
+			<img src="../../img/9122.png" />
+			<a href="https://mp.weixin.qq.com/s/PYN_JA_0YLprPunI-bRgsw">图片来源</a> <br />
+			<font color="red">
+				a = $b \ cos \ C + c \ cos \ B$ <br />
+				b = $a \ cos \ C + c \ cos \ A$ <br />
+				c = $a \ cos \ B + b \ cos \ A$
+			</font> <br />
+		</div>
+		
+		
+		<br />
+		<br />
+		<br />
+		<div class="code_block">
+			<img src="../../img/9124.png" />
+			<a href="https://mp.weixin.qq.com/s/PYN_JA_0YLprPunI-bRgsw">图片来源</a> <br />
+			<font color="red">
+				$a^2 + b^2 + c^2 = 2(bc \ cosA + ac \ cos B + ab \ cos C)$
+			</font> <br />
+		</div>
+		
+		
+		<br />
+		<br />
+		<br />
+		已知三边的长, 求面积S: <br />
+		<div class="code_block">
+			1.秦九韶的“三斜求积术” <br />
+			<img src="../../img/9123.png" /> <br />
+			<a href="https://mp.weixin.qq.com/s/PYN_JA_0YLprPunI-bRgsw">图片来源</a> <br />
+			<font color="red">
+				S = $\sqrt {{1 \over 4} [c^2 a^2 - ({c^2 + a^2 - b^2 \over 2})^2]}$
+			</font> <br />
+			
+			<br />
+			2.海伦公式(更好记, 更好算) <br />
+			<font color="red">
+				S = $\sqrt {p(p-a)(p-b)(p-c)} \ , \ p = {(a + b + c) \over 2}$
+			</font>
+		</div>
+		
+		<br />
 	　　<h2>9.2 正弦定理与余弦定理的应用</h2>
 	
 	　　<h2>9.3 数学探究活动:得到不可达两点之间的距离</h2>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>第五章 一元函数的导数及其应用</title>
+		<link rel="stylesheet" href="../../css/code_black.css" />
+		<link rel="stylesheet" href="../../css/table_style.css" />
+		<!-- MathJax数学公式 -->
+		<script src="../../js/load-mathjax.js" async></script>
+		<!-- echarts图表: https://github.com/apache/echarts,
+		     https://echarts.apache.org/zh/index.html -->
+		<script src="https://cdn.staticfile.org/echarts/5.2.1/echarts.min.js"></script>
+	</head>
+	
+	<body>
+		<h1>第五章 一元函数的导数及其应用</h1>
+		<hr />
+		
+		<h2>5.1 导数的概念及其意义</h2>
+		<h3>5.1.1变化率问题</h3>
+		<h3>5.1.2导数的概念及其几何意义</h3>
+		<div class="code_block">
+			对于函数y=f(x), 设自变量 x 从 $x_0$ 变化到 $x_0 + △x$, 相应地, 函数值 y 就从 f($x_0$)
+			变化到f($x_0 + △x$). 这时, x的变化量为△x, y的变化量为 △y=f($x_0 + △x$) - f($x_0$). <br />
+			<font color="red">
+				$$f^{'}(x_0) = {\lim_{△x → 0}}{△y \over △x} = {{f(x_0 + △x) - f(x_0)} \over △x}$$
+			</font> <br />
+			以上函数叫做函数 y=f(x) 从 $x_0$ 到 $x_0 + △x$ 的平均变化率. <br />
+			如果当 $△x → 0$ 时, 平均变化率元限趋近于一个确定的值, 即有极限, 则称y = f(x)在 $x=x_0$ 处可导,
+			并把这个确定的值叫做 y=f(x) 在 $x=x_0$ 处的导数(derivative)
+			(也称为瞬时变化率), 记作 <font color="red">$f'(x_0)$</font> 或 <font color="red">$dF(x) = f(x)dx$</font> 或 $y \ '|_{x = x_0}$. <br />
+			<br />
+			
+			几何意义: <br />
+			可求函数切线(tangent line), 瞬时变化率, 求速度&加速度等
+		</div>
+		
+		<br />
+		<h2>5.2 导数的运算</h2>
+		<h3>5.2.1基本初等函数的导数(<a href="https://baike.baidu.com/item/%E5%AF%BC%E6%95%B0/579188?fr=aladdin" target="_blank">导数_百度百科.html</a>)</h3>
+		<table>
+			<tr>
+				<th>函数</th> <th>原函数</th> <th>导函数</th> <th>备注</th>
+			</tr>
+			<tr>
+				<td>1.常函数</td>
+				<td>$y = C$</td>
+				<td><font color="red">$y' = 0$</font></td>
+				<td>C为常数</td>
+			</tr>
+			<tr>
+				<td>1.1.直线函数</td>
+				<td>$y = a \ x$</td>
+				<td><font color="red">$y' = a$</font></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td rowspan="2">2.指数函数</td>
+				<td>$y = a^x$</td>
+				<td><font color="red">$y' = a^x \ ln \ a$</font></td>
+				<td>a>0, 且a≠1</td>
+			</tr>
+			<tr>
+				<td>$y = e^x$</td>
+				<td><font color="red">$y' = e^x$</font></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>3.幂函数</td>
+				<td>$y = x^a$</td>
+				<td><font color="red">$y' = ax^{a - 1}$</font></td>
+				<td>a∈Q, 且a≠0</td>
+			</tr>
+			<tr>
+				<td rowspan="2">4.对数函数</td>
+				<td>$y = log_a \ x$</td>
+				<td><font color="red">$y' = {1 \over x \ ln a}$</font></td>
+				<td>a>0, 且a≠1</td>
+			</tr>
+			<tr>
+				<td>$y = ln \ x$</td>
+				<td><font color="red">$y' = {1 \over x}$</font></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>5.正弦函数</td>
+				<td>$y = sin \ x$</td>
+				<td><font color="red">$y' = cos x$</font></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>6.余弦函数</td>
+				<td>$y = cos \ x$</td>
+				<td><font color="red">$y' = - sin x$</font></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td> <td></td> <td></td> <td></td>
+			</tr>
+			<tr>
+				<td>7.正切函数</td>
+				<td>$y = tan \ x$</td>
+				<td><font color="red">$y' = {1 \over cos^2 x} = sec^2 x$</font></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>8.余切函数</td>
+				<td>$y = cot \ x$</td>
+				<td><font color="red">$y' = -{1 \over sin^2 x} = - csc^2 x$</font></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>9.正割函数</td>
+				<td>$y = sec \ x$</td>
+				<td><font color="red">$y' = tan x \ sec x$</font></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>10.余割函数</td>
+				<td>$y = csc \ x$</td>
+				<td><font color="red">$y' = -cot x \ csc x$</font></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>11.反正弦函数</td>
+				<td>$y = arcsin \ x$</td>
+				<td><font color="red">$y' = {1 \over \sqrt {1 - x^2}}$</font></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>12.反余弦函数</td>
+				<td>$y = arccos \ x$</td>
+				<td><font color="red">$y' = - {1 \over \sqrt {1 - x^2}}$</font></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>13.反正切函数</td>
+				<td>$y = arctan \ x$</td>
+				<td><font color="red">$y' = {1 \over 1 + x^2}$</font></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>14.反余切函数</td>
+				<td>$y = arccot \ x$</td>
+				<td><font color="red">$y' = - {1 \over 1 + x^2}$</font></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>15.双曲线函数</td>
+				<td>$y = sh \ x$</td>
+				<td><font color="red">$y' = ch \ x$</font></td>
+				<td></td>
+			</tr>
+		</table>
+		
+		<h4>5.2.2导数的四则运算法则</h4>
+		<div class="code_block">
+			<font color="red">[f(x) ± g(x)]' = f'(x) ± g'(x)</font> <br />
+			<font color="red">[f(x)g(x)]' = f'(x)g(x) + f(x)g'(x)</font> <br />
+			<font color="red">$[{f(x) \over g(x)}]' = {f'(x)g(x) - f(x)g'(x) \over [g(x)]^2}$</font> g(x) ≠ 0<br />
+			⇒ <font color="red">[c f(x)]' = c f'(x)</font> c为常数<br />
+		</div>
+		<h4>5.2.3简单复合函数的导数<font color="red">★★★★★</font></h4>
+		<div class="code_block">
+			对于两个函数 y=f(u) 和 u=g(x), 如果通过中间变量u, y可以表示成x的函数,
+			那么称这个函数为函数 y=f(u) 和 u=g(x) 的<font color="red">复合函数</font>(composite function), 记作y=f(g(x)). <br />
+			
+			<br />
+			对于由函数 y=f(u) 和 <font color="red">u=g(x)</font> 复合而成的函数 y=f(g(x)), 它的导数与函数 y=f(u), u=g(x) 的导数间的关系为: <br />
+			<font color="red">$y'_x = y'_u . u'_x$</font> <br />
+			<br />
+		</div>
+		<div class="code_block">
+			例6 求下列函数的导数: <br />
+			(1) y = $(3x + 5)^3$, (2) y = $e^{-0.05x + 1}$, y = ln(2x - 1) <br />
+			解(1): <br />
+			&emsp; (1)函数可看做复合函数, 分别是y = $u^3$, u = 3x + 5 <br />
+			&emsp; 根据公式 $y'_x = y'_u . u'_x$ <br />
+			&emsp; $y'_x = (u^3)' . (3x + 5)'$ <br />
+			&emsp; $y'_x = (u^3)' . 3 = 3u^2 . 3$ <br />
+			&emsp; $y'_x = 9(u^2) = 9(3x + 5)^2$ <br />
+			<br />
+			解(2): <br />
+			&emsp; (2)函数的复合函数分别是y = $e^u$, u = -0.05x + 1 <br />
+			&emsp; 根据公式 $y'_x = y'_u . u'_x$ <br />
+			&emsp; $y'_x = (e^u)' . (-0.05x + 1)'$ <br />
+			&emsp; $y'_x = e^u . -0.05$ <br />
+			&emsp; $y'_x = -0.05 \ e^{-0.05x + 1}$ <br />
+			<br />
+			解(3): <br />
+			&emsp; (3)函数的复合函数分别是y = ln u, u = 2x - 1 <br />
+			&emsp; 根据公式 $y'_x = y'_u . u'_x$ <br />
+			&emsp; $y'_x = (ln \ u)' . (2x - 1)'$ <br />
+			&emsp; $y'_x = {1 \over u} . 2$ <br />
+			&emsp; $y'_x = {2 \over 2x - 1}$ <br />
+		</div>
+		
+		<br />
+		<h2>5.3 导数在研究函数中的应用</h2>
+		<h3>5.3.1 函数的单调性</h3>
+		<div class="code_block">
+			在某个区间 (a,b) 上, 如果 f'(x) > 0, 那么函数 f(x) 在区间 (a,b) 上<font color="red">单调递增</font>. <br />
+			在某个区间 (a,b) 上, 如果 f'(x) < 0, 那么函数 f(x) 在区间 (a,b) 上<font color="red">单调递减</font>. <br />
+		</div>
+		
+		<h3>5.3.2 函数的极值与最大(小)值</h3>
+		<div class="code_block">
+			如下图一, 是函数 $f(x) = sin({x \over 3}) * 6$ 的函数 <br />
+			设函数最低点a(-$3 \pi \over 2$, -6), 最高点b($3 \pi \over 2$, 6) <br />
+			我们把 a 点叫做函数 f(x) 的<font color="red">极小值点</font>, f(-$3 \pi \over 2$) = -6 叫做<font color="red">极小点</font>. <br />
+			我们把 b 点叫做函数 f(x) 的<font color="red">极大值点</font>, f($3 \pi \over 2$) = 6 叫做<font color="red">极大点</font>. <br />
+			极小值点, 极大值点统称为极值点. 极小值和极大值统称为极值(extremum). <br />
+			<br />
+			<font color="red">极值点的导数为0</font>.
+		</div>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="sinx1" style="width: 400px;height:400px;"></div>
+		<script type="text/javascript">
+			// 基于准备好的dom，初始化echarts实例
+			var myChart = echarts.init(document.getElementById('sinx1'));
+			
+			 var option;
+			 function func(x) {
+				 return Math.sin(x/3) * 6;
+			 }
+			 function generateData() {
+			   let data = [];
+			   for (let i = -10; i <= 10; i += 0.01) {
+				 data.push([i, func(i)]);
+			   }
+			   return data;
+			 }
+			 option = {
+			   animation: false,
+			   grid: {
+				 // 图表距4个边的距离
+				 top: 40,
+				 left: 50,
+				 right: 40,
+				 bottom: 50
+			   },
+			   xAxis: {
+				 name: 'x轴',
+				 min: -12,
+				 max: 12,
+				 minorTick: {
+				   // 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+				   // 是否显示次分隔线。默认不显示(网格竖着那条线)
+				   show: true
+				 }
+			   },
+			   yAxis: {
+				 name: 'y轴(图1, 函数的极值与最大(小)值)',
+				 min: -12,
+				 max: 12,
+				 minorTick: {
+					// 坐标轴次刻度线
+				   show: true
+				 },
+				 minorSplitLine: {
+					// 是否显示次分隔线。默认不显示(网格横着那条线)
+				   show: true
+				 }
+			   },
+			   dataZoom: [
+				 // 缩放
+				 {
+				   show: true,
+				   // inside: 将缩放组件内置在坐标系中
+				   type: 'inside',
+				   filterMode: 'none',
+				   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+				   xAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 },
+				 {
+				   show: true,
+				   type: 'inside',
+				   filterMode: 'none',
+				   yAxisIndex: [0],
+				   startValue: -20,
+				   endValue: 20
+				 }
+			   ],
+			   series: [
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData()
+				 }
+			   ]
+			 };
+			 
+			 option && myChart.setOption(option);
+		</script>
+		
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+	</body>
+</html>

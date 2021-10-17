@@ -3,21 +3,145 @@
 	<head>
 		<meta charset="utf-8">
 		<title>第八章 向量的数量积与三角恒等变换</title>
+		<link rel="stylesheet" href="../../css/code_black.css" />
+		<!-- MathJax数学公式 -->
+		<script src="../../js/load-mathjax.js" async></script>
 	</head>
 	
 	<body>
 		<h1>第八章 向量的数量积与三角恒等变换</h1>
 		<hr />
+		注: 如非特殊说明, 以下图片都来自<a href="https://mp.weixin.qq.com/s/4Lv5srftyCEOo-5WhVvYaw" target="_blank">高中数学考点题解</a>公众号
 		
 	　　<h2>8.1 向量的数量积</h2>
 	　　<h3>8.1.1 向量数量积的概念</h3>
+		<h4>1.两个向量的夹角</h4>
+		<div class="code_block">
+			给定两个非零向量a, b, 在平面内任选一点O, 作$\overrightarrow {OA} = a$, $\overrightarrow {OB} = b$,
+			则称[0,π]内的∠AOB为向量a与向量b的<font color="red">夹角</font>, 记作<font color="red">&lt;a, b&gt;</font>. <br />
+			<img src="../../img/81111.png" /> <br />
+			
+			如上图, 向量a与c的夹角为$\pi \over 2$, 即 &lt;a,c>=$\pi \over 2$; <br />
+			向量a与d的夹角为0, 即&lt;a,d>=0; <br />
+			向量a与e的夹角为π, 即&lt;a,e>=π.
+		</div>
+		
+		<h4>2.向量数量积的定义</h4>
+		<div class="code_block">
+			当a与b都是非零向量时, 称 |a||b|cos &lt;a,b> 为向量a与b的<font color="red">数量积</font>(也称为<font color="red">内积</font>),
+			记作 a·b, 即: <br />
+			<font color="red">a·b = |a||b|cos&lt;a,b></font>.
+		</div>
+		
+		<h4>3.向量的投影与向量数量积的集合意义</h4>
+		<div class="code_block">
+			<img src="../../img/81131.png" /> <br />
+			<img src="../../img/81132.png" /> <br />
+			<img src="../../img/81133.png" /> <br />
+			例: <br />
+			<img src="../../img/81134.png" />
+		</div>
+		
+		<br />
 	　　<h3>8.1.2 向量数量积的运算律</h3>
+		<div class="code_block">
+			<font color="red">$a.b = b.a$</font> <br />
+			<font color="red">$(\lambda a).b = \lambda(a.b)$</font> (当a,b都是非零向量且λ≠0) <br />
+			<font color="red">$(a + b) . c =a.c + b.c$</font> 证明如下:↓ <br />
+			<img src="../../img/8121.png" />
+		</div>
+		<br />
+		例2, 例3:
+		<div class="code_block">
+			<img src="../../img/8122.png" />
+		</div>
+		<br />
+		例4:
+		<div class="code_block">
+			<img src="../../img/8123.png" />
+		</div>
+		
+		<br />
 	　　<h3>8.1.3 向量数量积的坐标运算</h3>
+		<h4>1.向量的坐标与向量的数量积</h4>
+		<div class="code_block">
+			<img src="../../img/81311.png" /> <br />
+			<font color="red" size="6">$\displaystyle a.b = x_1 x_2 + y_1 y_2$</font> <br />
+			<font color="red">后面还有一些内容没整理...</font>
+		</div>
+		<h4>2.用向量的坐标表示两个向量垂直的条件</h4>
+		<div class="code_block">
+			<img src="../../img/81321.png" /> <br />
+			<font color="red">后面还有一些内容没整理...</font>
+		</div>
 	　　
+		<br />
 		<h2>8.2 三角恒等变换</h2>
 	　　<h3>8.2.1 两角和与差的余弦</h3>
+		<div class="code_block">
+			<font color="red" size="6">$cos(\alpha - \beta) = cos \alpha \ cos \beta + sin \alpha \ sin \beta$</font> <br />
+			<img src="../../img/8211.png" /> <br />
+			<br />
+			<font color="red" size="6">$cos(\alpha + \beta) = cos \alpha \ cos \beta - sin \alpha \ sin \beta$</font> <br />
+			证明: <br />
+			cos(α + β) = cos(α - (-β)) <br />
+			= cosα.cos(-β) + sinα.sin(-β) <br />
+			= cosα.cosβ - sinα.sinβ
+		</div>
+		
+		<br />
 	　　<h3>8.2.2 两角和与差的正弦、正切</h3>
+		<h4>1.两角和与差的正弦</h4>
+		<div class="code_block">
+			<font color="red" size="6">$sin(α + β) = sin α \ cosβ + cosα \ sinβ$</font> <br />
+			<font color="red" size="6">$sin(α - β) = sin α \ cosβ - cosα \ sinβ$</font> <br />
+			证明: <br />
+			sin(α + β) = cos(($\pi \over 2$ - α) - β) <br />
+			= cos($\pi \over 2$ - α)cosβ + sin($\pi \over 2$ - α)sinβ <br />
+			=sinα cosβ + cosα sinβ <br />
+			<br />
+			<img src="../../img/82211.png" /> <br />
+			<br />
+			<font color="red" size="6">$asin x + bcos x = \sqrt {a^2 + b^2}$ sin(x + ϕ)</font> <br />
+			<img src="../../img/82212.png" /> <br />
+			<br />
+			例: <br />
+			<img src="../../img/82213.png" />
+		</div>
+		<h4>2.两角和与差的正切</h4>
+		<div class="code_block">
+			<font color="red">tan(α + β)</font> = $sin(α + β) \over cos(α + β)$ <br />
+			= $sinα \ cosβ + cosα \ sinβ \over {cosα \ cosβ - sinα \ sinβ}$ 分子分母同时除以cosα cosβ <br />
+			<font color="red">= $tan α + tan β \over 1 - tan α \ tan β$</font> <br />
+			
+			<br />
+			⇒ <font color="red">tan(α - β) = $tan α - tan β \over 1 + tan α \ tan β$</font>
+		</div>
+		
+		<br />
 	　　<h3>8.2.3 倍角公式</h3>
+		<div class="code_block">
+			<font color="red">sin 2α = 2sinα cosα</font> <br />
+			<font color="red">cos 2α = $cos^2 α - sin^2 α$</font> <br />
+			<font color="red">tan 2α = $2 \ tan α \over 1 - tan^2 α$</font> <br />
+			<br />
+			<font color="red">cos 2α = $1 - 2sin^2 α$</font>(∵$sin^2 α + cos^2 α = 1$) <br />
+		</div>
+		
+		<br />
 	　　<h3>8.2.4 三角恒等变换的应用</h3>
+		<div class="code_block">
+			<font color="red">较难, 未整理...</font> <br />
+			
+		</div>
+		<div class="code_block">
+			拓展阅读: <br />
+			<img src="../../img/8241.png" />
+		</div>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
 	</body>
 </html>

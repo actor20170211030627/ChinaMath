@@ -3,22 +3,112 @@
 	<head>
 		<meta charset="utf-8">
 		<title>第十章 复数</title>
+		<link rel="stylesheet" href="../../css/code_black.css" />
+		<!-- MathJax数学公式 -->
+		<script src="../../js/load-mathjax.js" async></script>
 	</head>
 	
 	<body>
 		<h1>第十章 复数</h1>
-		<hr />
-		
 	　　<h2>10.1 复数及其几何意义</h2>
 	　　<h3>10.1.1 复数的概念</h3>
+		<div class="code_block">
+			1.为了使得方程 $x^2 = -1$ 有解, 人们规定i的平方等于-1, 即: <br />
+			<font color="red">$$i^2 = -1$$</font> 并称<font color="red">i</font>为<font color="red">虚数单位</font>. <br />
+			
+			<br />
+			2.当a与b都是实数时, 称 a+bi 为<font color="red">复数</font>, 复数一般用小写字母z表示, 即 <br />
+			<font color="red">$$z=a+bi \ (a, b∈R)$$</font>
+			其中a称为z的实部, b称为z的虚部, 分别记作 <br />
+			Re(z)=a, Im(z)=b. <br />
+			
+			<br />
+			3.所有复数组成的集合称为<font color="cornflowerblue">复数集</font>, 复数集通常用大写字母C表示, 因此 <br />
+			$C = \{z | z=a+bi, \ a, b∈R \}$ <br />
+			
+			<br />
+			4.称虚部不为0的复数为<font color="red">虚数</font>, 称实部为0的虚数为<font color="red">纯虚数</font>, 例: <br />
+			z = 3, $z_1$ = 3 + 0i 实数 <br />
+			z = 3 + 2i 虚数 <br />
+			z = 2i 纯虚数 <br />
+		</div>
+		
+		<br />
 	　　<h3>10.1.2 复数的几何意义</h3>
+		<div class="code_block">
+			<img src="../../img/10121.png" /><a href="https://mp.weixin.qq.com/s/PYN_JA_0YLprPunI-bRgsw" target="_blank">资料来源</a> <br />
+			1.如上图所示, 复数1+2i对应的点为A(1,2), 复数3对应的点为B(3,0), 复数-1i对应的点为C(0,-1). <br />
+			
+			<br />
+			2.建立了直角坐标系来表示复数的平面也称为<font color="red">复平面</font>. <br />
+			在复平面内, x轴上的点对应的都是实数, 因此x轴称为<font color="cornflowerblue">实轴</font>; <br />
+			y轴上的点除了原点外, 对应的都是纯虚数, 为了方便起见, 称y轴为<font color="cornflowerblue">虚轴</font>. <br />
+			<br />
+			
+			3.如果两个复数的实部相等, 而虚部互为相反数, 则称这两个复数互为<font color="red">共轭(è)复数</font><font color="cornflowerblue">(y轴对称)</font>,
+			复数z的共轭复数用z表示, 因此, 当<font color="cornflowerblue">z=a+bi(a, b∈R)</font>时, 有
+			<font color="red">$$\overline z = a - bi$$</font>
+			显然, 在复平面内, <font color="red">表示两个共轭复数的点关于实轴对称</font>; <br />
+			反之,如果表示两个复数的点在复平面内关于实轴对称, 则这两个复数互为共轭复数. <br />
+			复数还有另外一种几何意义: <br />
+			&emsp; 因为平面直角坐标系中的点Z(a,b)能确定一个以原点O为始点、Z为终点的向量OZ,
+			所以复数也可用向量 <font color="red">$\overrightarrow {OZ}$</font> 来表示, 即: <br />
+			复数 z = $a+bi ↔$ 向量$\overrightarrow {OZ}$=(a,b) <br />
+			
+			<br />
+			4.向量$\overrightarrow {OZ}$=(a,b)的长度称为复数z=a+bi的<font color="red">模</font>(或<font color="red">绝对值</font>),
+			复数z的模用|x|表示, 因此 $|z| = \sqrt {a^2 + b^2}$
+		</div>
 		
 		<br />
 	　　<h2>10.2 复数的运算</h2>
 	　　<h3>10.2.1 复数的加法与减法</h3>
+	　　<h4>1.复数的加法</h4>
+		<div class="code_block">
+			设 $z_1 = a + bi$, $z_2 = c + di$ <br />
+			加法: <font color="red">$z_1 + z_2 = a + c + (b + d)i$</font> <br />
+			<br />
+			<img src="../../img/102111.png" />
+		</div>
+		<h4>2.复数的减法</h4>
+		<div class="code_block">
+			设 $z_1 = a + bi$, $z_2 = c + di$ <br />
+			减法: <font color="red">$z_1 - z_2 = a - c + (b - d)i$</font> <br />
+			<br />
+			<img src="../../img/102112.png" />
+		</div>
+		
+		<br />
 	　　<h3>10.2.2 复数的乘法与除法</h3>
+		<h4>1.复数的乘法</h4>
+		<div class="code_block">
+			设 $z_1 = a + bi$, $z_2 = c + di$ <br />
+			乘法: <font color="red">$z_1 z_2$</font> = $ac + bci + adi + bdi^2$ <br />
+			&emsp;&emsp;&emsp;&emsp;&emsp; <font color="red">= $ac - bd + (bc + ad)i$</font> <br />
+			
+			<br />
+			<font color="red">$(a + bi)(a - bi) = a^2 + b^2$</font> <br />
+			<font color="red">$z^m z^n = z^{m+n}, \ (z^m)^n = z^{mn}, \ (z_1 z_2)^m = z_1^m z_2^m$</font>
+		</div>
+		<h4>2.复数的除法</h4>
+		<div class="code_block">
+			就和实数除法一样, 略...
+		</div>
+		<h4>3.实系数一元二次方程在复数范围内的解集</h4>
+		<div class="code_block">
+			因为 $i^2 = (-i)^2 = -1$, 所以 $x^2 = -1$ 的解集为: <font color="red">i, -1</font>. <br />
+			
+			<br />
+			当a,b,c都是实数且 a≠0 时, 关于x的方程 $a^2+bx+c=0$ 称为<font color="red">实系数一元二次方程</font>, 这个方程在复数范围内总是有解的, 而且 <br />
+			(1)当 $△=b^2-4ac>0$ 时,方程有两个不相等的实数根 <br />
+			(2)当 $△=b^2-4ac=0$ 时,方程有两个相等的实数根; <br />
+			(3)当 $△=b^2-4ac<0$ 时,方程有两个互为共轭的虚数根 <br />
+			$x_1 + x_2 = - {b \over a}$ <br />
+			$x_1 x_2 = {c \over a}$ <br />
+		</div> <br />
 		
 		<br />
 	　　<h2>10.3 复数的三角形式及其运算</h2>
+		<h4>1.复数的三角形式<font color="red">(待完成)</font></h4>
 	</body>
 </html>

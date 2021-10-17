@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* 
+ * <!-- 引入表格样式 -->
+ * <link rel="stylesheet" href="../css/table_style.css" />
+ */
+
+
+
+table {
+	/* 边框 & 颜色 */
+	border: 1px solid #CCC;
+	border-color: #CCC;
+	border-bottom: 0px;
+	border-left: 0px;
+	
+	/* <table>的 cellspacing="0px"属性, 单元格之间的间距(如果不去掉会有空白间距) */
+	border-collapse: collapse;
+	
+	/* 宽高 */
+	width: -1px;
+	height: -1px;
+	
+	/* 背景颜色/图片 */
+	/* bgcolor: #F00; */ /* 这个属性不起作用 */
+	background: transparent;
+	
+	/* 文字 */
+	text-align: start;
+}
+
+/* 奇数行显示 */
+table tr:nth-child(odd) {
+	background: white;
+}
+
+/* 偶数行显示 */
+table tr:nth-child(even) {
+	background: #f7f7f7;
+}
+
+table th {
+	/* 字体颜色 */
+	color: black;
+	/* line-height: 30px; */
+	border-bottom:1px solid #CCC;
+	border-left:1px solid #CCC;
+	padding: 5px;
+	background-color: #EFF3F5;
+}
+
+table td {
+	/* 字体大小 */
+	/* font-size: 14px; */
+	/* 每一行字体高度 */
+	/* line-height:30px; */
+	border-bottom: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	/* <table>的 cellpadding="0px" 单元格里内容与边框的距离 */
+	padding: 5px;
+	/* background-color: #f7f7f7; */
+}

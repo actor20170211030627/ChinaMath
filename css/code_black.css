@@ -5,6 +5,16 @@
  */
 
 
+
+/* 设置<hr>样式 */
+hr {
+  background-image: linear-gradient(to right, #000, #fff);
+  border: none;
+  height: 2px;
+}
+
+
+
 /* 换行会被执行 */
 pre {
 	/*清除继承样式*/

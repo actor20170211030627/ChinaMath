@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>第四章 数列</title>
+		<link rel="stylesheet" href="../../css/code_black.css" />
+		<!-- MathJax数学公式 -->
+		<script src="../../js/load-mathjax.js" async></script>
+	</head>
+	
+	<body>
+		<h1>第四章 数列</h1>
+		<hr />
+		注: 如非特殊说明, 以下图片都来自<a href="https://mp.weixin.qq.com/s/L1fxwUYgUE3N6nXK_5buoA" target="_blank">高中数学考点题解</a>公众号
+		
+		<h2>4.1 数列的概念</h2>
+		<div class="code_block">
+			数列的一般形式是 $a_1, \ a_2, \ a_3, \ ... \ a_n$, (n ≥ 1) <br />
+			简记为 <font color="red">$\{a_n\}$</font> <br />
+			<br />
+			如果数列$\{a_n\}$的第n项 $a_n$。与它的序号n之间的对应关系可以用一个式子来表示, 那么这个式子叫做这个数列的<font color="red">通项公式</font>. <br />
+			<br />
+			像 $a_n=3a_{n-1}$(n≥2) 这样, 如果一个数列的<font color="cornflowerblue">相邻两项或多项</font>之间的关系可以用一个式子来表示,
+			那么这个式子叫做这个数列的<font color="red">递推公式</font>. <br />
+			知道了首项和递推公式,就能求出数列的每一项了. <br />
+			<br />
+			把数列$\{a_n\}$从第1项起到第n项止的各项之和, 称为数列$\{a_n\}$的前n项和, 记作<font color="red">$S_n$</font>, 即 <br />
+			<font color="red">$S_n = a_1 + a_2 + … + a_n$</font> <br />
+		</div>
+		<br />
+		<div class="code_block">
+			例: 已知数列$\{a_n\}$的前n项和公式为$S_n = n^2 + n$, 你能求出$\{a_n\}$的通项公式吗? <br />
+			解: <br />
+			∵ $a_1=S_1$ = 2, <br />
+			$a_n = S_n - S_{n-1}$ <br />
+			= $n^2 + n - [(n-1)^2 + (n-1)]$ <br />
+			= 2n (n ≥ 2), <br />
+			并且当n=1时, $a_1$=2×1=2 依然成立, 所以{an}的通项公式是$a_n = 2n$.
+		</div>
+		
+		<h2>4.2 等差数列</h2>
+		<h3>4.2.1 等差数列的概念</h3>
+		<div class="code_block">
+			&emsp; 如果一个数列从第2项起, 每一项与它的前一项的差都等于同一个常数, 那么这个数列就叫做<font color="red">等差数列</font>(arithmetic progression). <br />
+			&emsp; 这个常数叫做等差数列的<font color="red">公差</font>(common difference), 公差通常用字母 <font color="red"><strong>d</strong></font> 表示. <br />
+			<br />
+			<hr />
+			设一个等差数列$\{a_n\}$的首项为$a_1$, 公差为 d. 根据等差数列的定义, 可得 <br />
+			$a_{n + 1} - a_n$ = d <br />
+			所以 $a_2 - a_1 = d, \ a_3 - a_2 = d, \ a_4 - a_3 = d, \ ...$ <br />
+			于是 $a_2 = a1 + d, \ a_3 = a_2 + d = a_1 + 2d$ <br />
+			因此, 首项为$a_1$, 公差为 d 的等差数列$\{a_n\}$的通项公式为: <br />
+			<font color="red" size="6">$$a_n = a_1 + (n - 1)d$$</font>
+		</div>
+		
+		<h3>4.2.2 等差数列的前n项和公式</h3>
+		<div class="code_block">
+			例1: Sn = 1 + 2 + 3 + ... + 100; <br />
+			$S_n = a_1 + a_2 + ... + a_{n-1} + a_n$; <br />
+			= $(a_1 + a_n) + (a_2 + a_{n-1}) + ...$ <br />
+			= $(a_1 + a_n) . {n \over 2}$ <br />
+			<font color="red" size="6">$$S_n = {n(a_1 + a_n) \over 2}$$</font>
+			
+			例2: <br />
+			已知a1 = 1, 公差d = 1, 求前100项的和. <br />
+			根据以上2个公式, 可以推出Sn 与 公差d的关系: <br />
+			<font color="red" size="6">$$S_n = na_1 + {n(n - 1) \over 2} d$$</font>
+		</div>
+		
+		<br />
+		<h2>4.3 等比数列</h2>
+		<h3>4.3.1 等比数列的概念</h3>
+		<div class="code_block">
+			如果一个数列从第2项起, 每一项与它的前一项的比都等于同一个常数,
+			那么这个数列叫做<font color="red">等比数列</font>(geometric progression),
+			这个常数叫做等比数列的<font color="red">公比</font>(common ratio),
+			公比通常用字母 <font color="red"><strong>q</strong></font> 表示(显然q≠0). <br />
+			$a_2 = a_1.q$; <br />
+			$a_3 = a_2.q = a_1.q^2$; <br />
+			$a_4 = a_3.q = a_1.q^3$; <br />
+			<font color="red" size="6">$$a_n = a_1.q^{n-1}$$</font>
+		</div>
+		
+		<h3>4.3.2 等比数列的前n项和公式</h3>
+		<div class="code_block">
+			$S_n = a_1 + a_2 + a_3 + ... + a_n$ <br />
+			$S_n = a_1 + a_1q + a_1q^2 + ... + a_1q^{n-1}$......① <br />
+			$qS_n = a_1q + a_1q^2 + a_1q^3 + ... + a_1q^n$......② <br />
+			用② - ①得: <br />
+			<font color="red" size="6">$$S_n = a_1 {q^n - 1 \over q - 1}$$</font>
+		</div>
+		
+		<br />
+		<h2>4.4 数学归纳法(是一种证明方法)</h2>
+		<div class="code_block">
+			证明一个与正整数n有关的命题, 可按下列步骤进行: <br />
+			(1) (归纳奠基) 证明当 $n = n_0 \ (n_0 ∈ N^*)$ 时命题成立. <br />
+			(2) (归纳奠基) 以 "当 $n = k \ (k ∈ N^*, \ k ≥ n_0)$ 时命题成立" 为条件,
+			推出"当 n = k + 1 时命题也成立". <br />
+			只要完成这两个步骤, 就可以断定命题对从 $n_0$ 开始的所有正整数 n 都成立,
+			这种证明方法称为<font color="red">数学归纳法</font>(mathematical induction).
+		</div>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+	</body>
+</html>

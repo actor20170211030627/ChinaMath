@@ -40,58 +40,68 @@
 		<h3>5.2.1基本初等函数的导数(<a href="https://baike.baidu.com/item/%E5%AF%BC%E6%95%B0/579188?fr=aladdin" target="_blank">导数_百度百科.html</a>)</h3>
 		<table>
 			<tr>
-				<th>函数</th> <th>原函数</th> <th>导函数</th> <th>备注</th>
+				<th>函数</th> <th>原函数y =</th> <th>导函数y' =</th> <th>备注</th>
 			</tr>
 			<tr>
 				<td>1.常函数</td>
-				<td>$y = C$</td>
-				<td><font color="red">$y' = 0$</font></td>
+				<td>$C$</td>
+				<td><font color="red">$0$</font></td>
 				<td>C为常数</td>
 			</tr>
 			<tr>
 				<td>1.1.直线函数</td>
-				<td>$y = a \ x$</td>
-				<td><font color="red">$y' = a$</font></td>
+				<td>$a \ x$</td>
+				<td><font color="red">$a$</font></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td rowspan="2">2.指数函数</td>
-				<td>$y = a^x$</td>
-				<td><font color="red">$y' = a^x \ ln \ a$</font></td>
+				<td>$a^x$</td>
+				<td><font color="red">$a^x \ ln \ a$</font></td>
 				<td>a>0, 且a≠1</td>
 			</tr>
 			<tr>
-				<td>$y = e^x$</td>
-				<td><font color="red">$y' = e^x$</font></td>
+				<td>$e^x$</td>
+				<td><font color="red">$e^x$</font></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td>3.幂函数</td>
-				<td>$y = x^a$</td>
-				<td><font color="red">$y' = ax^{a - 1}$</font></td>
+				<td rowspan="3">3.幂函数</td>
+				<td>$x^a$</td>
+				<td><font color="red">$ax^{a - 1}$</font></td>
 				<td>a∈Q, 且a≠0</td>
 			</tr>
 			<tr>
+				<td>$\sqrt x$</td>
+				<td><font color="red">$1 \over 2 \sqrt x$</font></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>$1 \over x$</td>
+				<td><font color="red">- $1 \over x^2$</font></td>
+				<td></td>
+			</tr>
+			<tr>
 				<td rowspan="2">4.对数函数</td>
-				<td>$y = log_a \ x$</td>
-				<td><font color="red">$y' = {1 \over x \ ln a}$</font></td>
+				<td>$log_a \ x$</td>
+				<td><font color="red">$1 \over x \ ln a$</font></td>
 				<td>a>0, 且a≠1</td>
 			</tr>
 			<tr>
-				<td>$y = ln \ x$</td>
-				<td><font color="red">$y' = {1 \over x}$</font></td>
+				<td>$ln \ x$</td>
+				<td><font color="red">$1 \over x$</font></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td>5.正弦函数</td>
-				<td>$y = sin \ x$</td>
-				<td><font color="red">$y' = cos x$</font></td>
+				<td>$sin \ x$</td>
+				<td><font color="red">$cos x$</font></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td>6.余弦函数</td>
-				<td>$y = cos \ x$</td>
-				<td><font color="red">$y' = - sin x$</font></td>
+				<td>$cos \ x$</td>
+				<td><font color="red">$- sin x$</font></td>
 				<td></td>
 			</tr>
 			<tr>
@@ -99,66 +109,76 @@
 			</tr>
 			<tr>
 				<td>7.正切函数</td>
-				<td>$y = tan \ x$</td>
-				<td><font color="red">$y' = {1 \over cos^2 x} = sec^2 x$</font></td>
+				<td>$tan \ x$</td>
+				<td><font color="red">${1 \over cos^2 x}$ = <mark>$sec^2 x = 1 + tan^2 x$</mark></font></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td>8.余切函数</td>
-				<td>$y = cot \ x$</td>
-				<td><font color="red">$y' = -{1 \over sin^2 x} = - csc^2 x$</font></td>
+				<td>$cot \ x$</td>
+				<td><font color="red">$-{1 \over sin^2 x}$ <br />
+				$= - $<mark>$csc^2 x$</mark> <br />
+				$= -$<mark>$(1 + cot^2 x)$</mark></font></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td>9.正割函数</td>
-				<td>$y = sec \ x$</td>
-				<td><font color="red">$y' = tan x \ sec x$</font></td>
+				<td>$sec \ x$</td>
+				<td><font color="red">$sec x \ tan x$</font></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td>10.余割函数</td>
-				<td>$y = csc \ x$</td>
-				<td><font color="red">$y' = -cot x \ csc x$</font></td>
+				<td>$csc \ x$</td>
+				<td><font color="red">$-csc x \ cot x$</font></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td>11.反正弦函数</td>
-				<td>$y = arcsin \ x$</td>
-				<td><font color="red">$y' = {1 \over \sqrt {1 - x^2}}$</font></td>
+				<td>$arcsin \ x$</td>
+				<td><font color="red">$1 \over \sqrt {1 - x^2}$</font></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td>12.反余弦函数</td>
-				<td>$y = arccos \ x$</td>
-				<td><font color="red">$y' = - {1 \over \sqrt {1 - x^2}}$</font></td>
+				<td>$arccos \ x$</td>
+				<td><font color="red">$- {1 \over \sqrt {1 - x^2}}$</font></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td>13.反正切函数</td>
-				<td>$y = arctan \ x$</td>
-				<td><font color="red">$y' = {1 \over 1 + x^2}$</font></td>
+				<td>$arctan \ x$</td>
+				<td><font color="red">$1 \over 1 + x^2$</font></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td>14.反余切函数</td>
-				<td>$y = arccot \ x$</td>
-				<td><font color="red">$y' = - {1 \over 1 + x^2}$</font></td>
+				<td>$arccot \ x$</td>
+				<td><font color="red">$- {1 \over 1 + x^2}$</font></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td>15.双曲线函数</td>
-				<td>$y = sh \ x$</td>
-				<td><font color="red">$y' = ch \ x$</font></td>
+				<td>$sh \ x$</td>
+				<td><font color="red">$ch \ x$</font></td>
 				<td></td>
 			</tr>
 		</table>
 		
 		<h4>5.2.2导数的四则运算法则</h4>
 		<div class="code_block">
-			<font color="red">[f(x) ± g(x)]' = f'(x) ± g'(x)</font> <br />
-			<font color="red">[f(x)g(x)]' = f'(x)g(x) + f(x)g'(x)</font> <br />
+			加减: <br />
+			<font color="red">$[f(x) ± g(x)]' = f'(x) ± g'(x)$</font> <br />
+			<font color="red">$(u + v - w)' = u' + v' - w'$</font> <br />
+			乘: <br />
+			<font color="red">$[f(x)g(x)]' = f'(x)g(x) + f(x)g'(x)$</font> <br />
+			<font color="red">$(uvw)' = (uv)'w + (uv)w'$</font> <br />
+			<font color="red">&emsp;&emsp;&emsp;&emsp;&emsp; $ = (u'v + uv')w + uvw'$</font> <br />
+			<font color="red">&emsp;&emsp;&emsp;&emsp;&emsp; $ = u'vw + uv'w + uvw'$</font> <br />
+			除: <br />
 			<font color="red">$[{f(x) \over g(x)}]' = {f'(x)g(x) - f(x)g'(x) \over [g(x)]^2}$</font> g(x) ≠ 0<br />
-			⇒ <font color="red">[c f(x)]' = c f'(x)</font> c为常数<br />
+			常数x函数: <br />
+			⇒ <font color="red">$[c f(x)]' = c f'(x)$</font> c为常数<br />
 		</div>
 		<h4>5.2.3简单复合函数的导数<font color="red">★★★★★</font></h4>
 		<div class="code_block">
@@ -169,10 +189,13 @@
 			对于由函数 y=f(u) 和 <font color="red">u=g(x)</font> 复合而成的函数 y=f(g(x)), 它的导数与函数 y=f(u), u=g(x) 的导数间的关系为: <br />
 			<font color="red">$y'_x = y'_u . u'_x$</font> <br />
 			<br />
+			大学高数微分: <br />
+			<font color="red">${dy \over {dx}} = {dy \over du}.{du \over dx} = f'(u).u'(x) = f'[g(x)].g'(x)$</font>
 		</div>
 		<div class="code_block">
 			例6 求下列函数的导数: <br />
-			(1) y = $(3x + 5)^3$, (2) y = $e^{-0.05x + 1}$, y = ln(2x - 1) <br />
+			(1) y = $(3x + 5)^3$, (2) y = $e^{-0.05x + 1}$, (3) y = ln(2x - 1) <br />
+			<font color="red" size="6">(4) $y = cos^2{1 \over x}$</font> <br />
 			解(1): <br />
 			&emsp; (1)函数可看做复合函数, 分别是y = $u^3$, u = 3x + 5 <br />
 			&emsp; 根据公式 $y'_x = y'_u . u'_x$ <br />
@@ -193,6 +216,13 @@
 			&emsp; $y'_x = (ln \ u)' . (2x - 1)'$ <br />
 			&emsp; $y'_x = {1 \over u} . 2$ <br />
 			&emsp; $y'_x = {2 \over 2x - 1}$ <br />
+			解(4): <br />
+			&emsp; (4)函数的复合函数分别是<font color="red" size="6">y = $n^2$, n = cos u, u = ${1 \over x}$</font> <br />
+			&emsp; 根据公式 $y'_x = y'_n . n'_u . u'_x$ <br />
+			&emsp; $y'_x = (n^2)' . (cos \ u)' . ({1 \over x})'$ <br />
+			&emsp; $y'_x = 2n . (- sin \ u) . (-{1 \over x^2})$ <br />
+			&emsp; $y'_x = 2 cos{1 \over x} . (- sin {1 \over x}) . (-{1 \over x^2})$ <br />
+			&emsp; $y'_x = {2 {sin {1 \over x} . cos {1 \over x}} \over x^2}$ <br />
 		</div>
 		
 		<br />
@@ -301,6 +331,7 @@
 			 
 			 option && myChart.setOption(option);
 		</script>
+		反函数的导数 = 直接函数导数的<font color="red">倒数</font>.(高数上册87页)
 		
 		<br />
 		<br />

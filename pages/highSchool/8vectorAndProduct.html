@@ -6,6 +6,9 @@
 		<link rel="stylesheet" href="../../css/code_black.css" />
 		<!-- MathJax数学公式 -->
 		<script src="../../js/load-mathjax.js" async></script>
+		<!-- echarts图表: https://github.com/apache/echarts,
+		     https://echarts.apache.org/zh/index.html -->
+		<script src="https://cdn.staticfile.org/echarts/5.2.1/echarts.min.js"></script>
 	</head>
 	
 	<body>
@@ -102,7 +105,101 @@
 			<br />
 			<img src="../../img/82211.png" /> <br />
 			<br />
-			<font color="red" size="6">$asin x + bcos x = \sqrt {a^2 + b^2}$ sin(x + ϕ)</font> <br />
+			<font color="red" size="6">$asin x + bcos x = A \ sin(x + ϕ)$</font> <br />
+			<font color="red" size="6">$A = \sqrt {a^2 + b^2}$</font> <br />
+			<font color="red" size="6">$cos \phi = {a \over A}, sin \phi = {b \over A}$</font> <br />
+			<br />
+			下图1是 $y = 1.sin x + 1.cos x$ 的函数, 右侧最高点(${\pi \over 4}, \sqrt 2$): <br />
+			<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+			<div id="sinx1" style="width: 400px;height:400px;"></div>
+			<script type="text/javascript">
+				// 基于准备好的dom，初始化echarts实例
+				var myChart = echarts.init(document.getElementById('sinx1'));
+				
+				 var option;
+				 function func(x) {
+					 return Math.sin(x) + Math.cos(x);
+				 }
+				 function generateData() {
+				   let data = [];
+				   for (let i = -10; i <= 10; i += 0.01) {
+					 data.push([i, func(i)]);
+				   }
+				   return data;
+				 }
+				 option = {
+				   animation: false,
+				   grid: {
+					 // 图表距4个边的距离
+					 top: 40,
+					 left: 50,
+					 right: 40,
+					 bottom: 50
+				   },
+				   xAxis: {
+					 name: 'x轴',
+					 min: -5,
+					 max: 5,
+					 minorTick: {
+					   // 坐标轴次刻度线
+					   show: true
+					 },
+					 minorSplitLine: {
+					   // 是否显示次分隔线。默认不显示(网格竖着那条线)
+					   show: true
+					 }
+				   },
+				   yAxis: {
+					 name: 'y轴(图1)',
+					 min: -5,
+					 max: 5,
+					 minorTick: {
+						// 坐标轴次刻度线
+					   show: true
+					 },
+					 minorSplitLine: {
+						// 是否显示次分隔线。默认不显示(网格横着那条线)
+					   show: true
+					 }
+				   },
+				   dataZoom: [
+					 // 缩放
+					 {
+					   show: true,
+					   // inside: 将缩放组件内置在坐标系中
+					   type: 'inside',
+					   filterMode: 'none',
+					   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+					   xAxisIndex: [0],
+					   startValue: -20,
+					   endValue: 20
+					 },
+					 {
+					   show: true,
+					   type: 'inside',
+					   filterMode: 'none',
+					   yAxisIndex: [0],
+					   startValue: -20,
+					   endValue: 20
+					 }
+				   ],
+				   series: [
+					 {
+					   // 显示类型, line线
+					   type: 'line',
+					   // 是否显示绘制的点
+					   showSymbol: false,
+					   // 超出界限外的是否裁剪掉
+					   clip: true,
+					   data: generateData()
+					 }
+				   ]
+				 };
+				 
+				 option && myChart.setOption(option);
+			</script>
+			
+			
 			<img src="../../img/82212.png" /> <br />
 			<br />
 			例: <br />
@@ -110,29 +207,41 @@
 		</div>
 		<h4>2.两角和与差的正切</h4>
 		<div class="code_block">
-			<font color="red">tan(α + β)</font> = $sin(α + β) \over cos(α + β)$ <br />
+			<font color="red" size="6">tan(α + β)</font> = $sin(α + β) \over cos(α + β)$ <br />
 			= $sinα \ cosβ + cosα \ sinβ \over {cosα \ cosβ - sinα \ sinβ}$ 分子分母同时除以cosα cosβ <br />
-			<font color="red">= $tan α + tan β \over 1 - tan α \ tan β$</font> <br />
+			<font color="red" size="6">= $tan α + tan β \over 1 - tan α \ tan β$</font> <br />
 			
 			<br />
-			⇒ <font color="red">tan(α - β) = $tan α - tan β \over 1 + tan α \ tan β$</font>
+			⇒ <font color="red" size="6">tan(α - β) = $tan α - tan β \over 1 + tan α \ tan β$</font>
 		</div>
 		
 		<br />
 	　　<h3>8.2.3 倍角公式</h3>
 		<div class="code_block">
-			<font color="red">sin 2α = 2sinα cosα</font> <br />
-			<font color="red">cos 2α = $cos^2 α - sin^2 α$</font> <br />
-			<font color="red">tan 2α = $2 \ tan α \over 1 - tan^2 α$</font> <br />
+			<font color="red" size="6">sin 2α = 2sinα cosα</font> <br />
+			<font color="red" size="6">cos 2α = $cos^2 α - sin^2 α$</font> <br />
+			<font color="red" size="6">tan 2α = $2 \ tan α \over 1 - tan^2 α$</font> <br />
 			<br />
-			<font color="red">cos 2α = $1 - 2sin^2 α$</font>(∵$sin^2 α + cos^2 α = 1$) <br />
+			<font color="red" size="6">cos 2α = $1 - 2sin^2 α$</font>(∵$sin^2 α + cos^2 α = 1$) <br />
 		</div>
 		
 		<br />
 	　　<h3>8.2.4 三角恒等变换的应用</h3>
 		<div class="code_block">
-			<font color="red">较难, 未整理...</font> <br />
-			
+			<font color="red" size="6">$sin^2 {\alpha \over 2} = {{1 - cos \alpha} \over 2}$</font> <br />
+			<font color="red" size="6">$cos^2 {\alpha \over 2} = {{1 + cos \alpha} \over 2}$</font> <br />
+			<font color="red" size="6">$tan^2 {\alpha \over 2} = {{1 - cos \alpha} \over {1 + cos \alpha}}$</font> <br />
+			<br />
+			<font color="red" size="6">$tan {\alpha \over 2} = {sin \alpha \over {1 + cos \alpha}} = {{1 - cos \alpha} \over sin \alpha}$</font> <br />
+			<br />
+			<b>积化和差公式(下方4个):</b> <br />
+			由 $cos(\alpha + \beta)$ 和 $cos(\alpha - \beta)$ 两边分别相加和相减得到: <br />
+			<font color="red" size="6">$cos \alpha cos \beta = {1 \over 2}[cos(\alpha + \beta) + cos(\alpha - \beta)]$</font> <br />
+			<font color="red" size="6">$sin \alpha sin \beta = - {1 \over 2}[cos(\alpha + \beta) - cos(\alpha - \beta)]$</font> <br />
+			<br />
+			由 $sin(\alpha + \beta)$ 和 $sin(\alpha - \beta)$ 两边分别相加和相减得到: <br />
+			<font color="red" size="6">$sin \alpha cos \beta = {1 \over 2}[sin(\alpha + \beta) + sin(\alpha - \beta)]$</font> <br />
+			<font color="red" size="6">$cos \alpha sin \beta = {1 \over 2}[sin(\alpha + \beta) - sin(\alpha - \beta)]$</font> <br />
 		</div>
 		<div class="code_block">
 			拓展阅读: <br />

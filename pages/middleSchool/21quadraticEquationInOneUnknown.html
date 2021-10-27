@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>第二十一章 一元二次方程</title>
+		<link rel="stylesheet" href="../../css/code_black.css" />
+		<!-- MathJax数学公式 -->
+		<script src="../../js/load-mathjax.js" async></script>
+	</head>
+	
+	<body>
+		<h1>第二十一章 一元二次方程</h1>
+		<hr />
+		注: 如非特殊说明, 以下图片都来自<a href="http://www.dzkbw.com/books/rjb/shuxue/xc9s/" target="_blank">电子课本网</a>
+		
+		<h2>21.1 一元二次方程</h2>
+		<div class="code_block">
+			等号两边都是整式, 只含有一个未知数(一元), 并且未知数的最高次数是2(二次)的方程,叫做<font color="red">一元二次方程</font>(quadratic equation in one unknown). <br />
+			一元二次方程的一般形式是 <br />
+			<font color="red">$ax^2 + bx + c = 0$ (a≠0)</font>
+		</div>
+		
+		<br />
+		<h2>21.2 解一元二次方程</h2>
+		<h3>21.2.1 配方法</h3>
+		<div class="code_block">
+			$x^2 + 6x + 4 = 0$ <br />
+			解: <br />
+			$x^2 + 6x + 9 - 5 = 0$(配方法) <br />
+			$(x + 3)^2 = 5$ <br />
+			$x + 3 = ± \sqrt 5$ <br />
+			$x = -3 ± \sqrt 5$ <br />
+		</div>
+		<h3>21.2.2 公式法</h3>
+		<div class="code_block">
+			$ax^2 + bx + c = 0$ (a≠0) <br />
+			解: <br />
+			$ax^2 + bx = -c$ <br />
+			$x^2 + {b \over a}x = -{c \over a}$ <br />
+			配方得: <br />
+			$(x + {b \over 2a})^2 = {b^2 - 4ac \over 4a^2}$ <br />
+			因为a≠0, 所以 $4a^2 > 0$. 式子 $b^2 - 4ac$ 的值有以下三种情况: <br />
+			<font color="red">(1)</font>. $b^2 - 4ac > 0$ <br />
+			&emsp;&emsp;&emsp;&emsp;<font color="red" size="6">$x = {-b ± \sqrt {b^2 - 4ac} \over 2a}$(求根公式)</font> <br />
+			<font color="red">(2)</font>. $b^2 - 4ac = 0$ <br />
+			&emsp;&emsp;&emsp;&emsp; <font color="red" size="6">$x = -{b \over 2a}$</font> <br />
+			<font color="red">(3)</font>. $b^2 - 4ac < 0$(无实数根) <br />
+			
+			<br />
+			一般地, 式子 $b^2 - 4ac$ 叫做一元二次方程 $ax^2 + bx + c = 0$ <font color="red"><b>根的判别式</b></font>,
+			通常用希腊字母“△”表示它, 即 $△=b^2-4ac$ <br />
+		</div>
+		<h3>21.2.3 因式分解法</h3>
+		<div class="code_block">
+			先因式分解, 使方程化为两个一次式的乘积<font color="red">等于0</font>的形式,
+			再使这两个一次式分别等于0, 从而实现降次. 这种解一元二次方程的方法叫做<font color="red">因式分解法</font>. <br />
+			<br />
+			例1: $10x - 4.9x^2 = 0$ <br />
+			解: <br />
+			&emsp; $x(10 - 4.9x) = 0$ <br />
+			&emsp; $x_1 = 0, \ x_2 = {100 \over 49}$ <br />
+			
+			<br />
+			例2: $x^2 - x -2 = 0$ <br />
+			解: <br />
+			&emsp; $(x + 1)(x - 2) = 0$ <br />
+			&emsp; $x_1 = -1, \ x_2 = 2$ <br />
+		</div>
+		
+		<h3>21.2.4 一元二次方程的根与系数的关系</h3>
+		<div class="code_block">
+			$x = {-b ± \sqrt {b^2 - 4ac} \over 2a}$(求根公式), 相加&amp;相乘可得到: <br />
+			<font color="red" size="6">$x_1 + x_2 = - {b \over a}$</font> <br />
+			<font color="red" size="6">$x_1 x_2 = {c \over a}$</font> <br />
+		</div>
+		
+		<br />
+		<h2>阅读与思考 黄金分割数</h2>
+		<img src="../../img/middleSchool/21241.png" /> <br />
+		
+		<br />
+		<br />
+		<font color="red">下方还未整理...</font>
+		<h2>21.3 实际问题与一元二次方程</h2>
+		<h2>数学活动</h2>
+		<h2>小结</h2>
+		<h2>复习题21</h2>
+	</body>
+</html>

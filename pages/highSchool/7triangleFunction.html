@@ -627,7 +627,7 @@
 			3.周期性: tan(x + π) = tan x <br />
 			4.单调性: 在(-$\pi \over 2$+kπ, $\pi \over 2$+kπ) (k∈R) 上单调递增
 		</div>
-		<h4>2.正切函数的图像(如下图1 <font color="red">[由于软件关系, 下放绘制的图不应该有那条竖线]</font>)</h4>
+		<h4>2.正切函数的图像(如下图1)</h4>
 		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
 		<div id="tanx1" style="width: 400px;height:400px;"></div>
 		<script type="text/javascript">
@@ -640,13 +640,34 @@
 			 }
 			 function generateData() {
 			   let data = [];
-			   for (let i = -10; i <= 10; i += 0.01) {
+			   // for (let i = -Math.PI * 1.5; i <= -Math.PI * 0.5; i += 0.01) {
+				//4.7123889803846898576939650749193, 小数点后最多7位, 否则画不出来...
+			   for (let i = -4.7123889; i <= -Math.PI * 0.5; i += 0.01) {
+					data.push([i, func(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData1() {
+			   let data = [];
+			   //1.5707963267948966192313216916398, 小数点后最多6位, 不知道这插件什么毛病...
+			   for (let i = -1.570796; i <= Math.PI * 0.5; i += 0.01) {
+					data.push([i, func(i)]);
+			   }
+			   return data;
+			 }
+			 function generateData2() {
+			   let data = [];
+			   //1.5707963267948966192313216916398, 小数点后最多6位, 不知道这插件什么毛病...
+			   for (let i = 1.570797; i <= Math.PI * 1.5; i += 0.01) {
 					data.push([i, func(i)]);
 			   }
 			   return data;
 			 }
 			 option = {
 			   animation: false,
+			   //默认颜色: https://echarts.apache.org/zh/option.html#color
+			     // color: ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc'],
+			     color: ['#5470c6', '#5470c6', '#5470c6', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc'],
 			   grid: {
 				 // 图表距4个边的距离
 				 top: 40,
@@ -710,6 +731,24 @@
 				   // 超出界限外的是否裁剪掉
 				   clip: true,
 				   data: generateData()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData1()
+				 },
+				 {
+				   // 显示类型, line线
+				   type: 'line',
+				   // 是否显示绘制的点
+				   showSymbol: false,
+				   // 超出界限外的是否裁剪掉
+				   clip: true,
+				   data: generateData2()
 				 }
 			   ]
 			 };

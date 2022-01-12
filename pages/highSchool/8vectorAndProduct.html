@@ -33,7 +33,17 @@
 		<div class="code_block">
 			当a与b都是非零向量时, 称 |a||b|cos &lt;a,b> 为向量a与b的<font color="red">数量积</font>(也称为<font color="red">内积</font>),
 			记作 a·b, 即: <br />
-			<font color="red">a·b = |a||b|cos&lt;a,b></font>.
+			<font color="red">a·b = |a||b|cos&lt;a,b></font>. <br />
+			<br />
+			由此可知, 两个非0向量a与b的数量积是一个实数, 这与向量的加法, 减法 以及 数乘向量 的结果任是一个向量不同. <br />
+			a与b垂直的充要条件 是 他们的数量积=0, 即: <br />
+            <font color="red">a⊥B ⇔ a.b=0</font> <br />
+            <br />
+            例1: |a| = 5, |b| = 4, &lt;a, b> = 120°, 求 a.b <br />
+            解: <br />
+            &emsp; a.b = |a|.|b|.cos&lt;a, b> = 20.(-1/2) = -10 <br />
+            <br />
+            <font color="red">⇒cos&lt;a, b> = $a.b \over |a||b|$</font>
 		</div>
 		
 		<h4>3.向量的投影与向量数量积的集合意义</h4>
@@ -70,8 +80,17 @@
 		<div class="code_block">
 			<img src="../../img/81311.png" /> <br />
 			<font color="red" size="6">$\displaystyle a.b = x_1 x_2 + y_1 y_2$</font> <br />
-			<font color="red">后面还有一些内容没整理...</font>
-		</div>
+            由此可知, 利用向量的坐标可以迅速地算出向量的数量积. <br />
+            <br />
+            而且, 当a=($x_1, y_1), b = (x_2, y_2)$都不是0向量时, 因为 $|a|^2 = a.a = x_1^2 + y_1^2, |b|^2 = b.b = x_2^2 + y_2^2$, <br />
+            ⇒ <font color="red" size="6">cos &lt;a, b> = ${x_1 x_2 + y_1 y_2 \over {\sqrt {x_1^2 + y_1^2} \sqrt {x_2^2 + y_2^2}}}$</font> <br />
+            也就是说, 根据向量的坐标, 还能方便地算出他们的 <font color="red">模</font> 以及 <font color="red">夹角</font> 等. <br />
+            <br />
+            在平面直角坐标系中，如果$A(x_1，y_1), B(x_2, y_2)$, 则$\overrightarrow {AB} = (x_2 - x_1, y_2 - y_1)$, <br />
+            从而$\overrightarrow {AB} . \overrightarrow {AB} = (x_2 - x_1)^2 + (y_2 - y_1)^2$, 因此 <br />
+            $|\overrightarrow {AB}| = \sqrt {(x_2 - x_1)^2 + (y_2 - y_1)^2}$.
+            这就是说, 利用向量的数量积, 同样可以方便地得出平面直角坐标系中两点之间的距离公式. <br />
+        </div>
 		<h4>2.用向量的坐标表示两个向量垂直的条件</h4>
 		<div class="code_block">
 			<img src="../../img/81321.png" /> <br />
@@ -107,7 +126,7 @@
 			<br />
 			<font color="red" size="6">$asin x + bcos x = A \ sin(x + ϕ)$</font> <br />
 			<font color="red" size="6">$A = \sqrt {a^2 + b^2}$</font> <br />
-			<font color="red" size="6">$cos \phi = {a \over A}, sin \phi = {b \over A}$</font> <br />
+			<font color="red" size="6">$cos \phi = {a \over A}, sin \phi = {b \over A}$(φ>0左移, &lt;0右移)</font> <br />
 			<br />
 			下图1是 $y = 1.sin x + 1.cos x$ 的函数, 右侧最高点(${\pi \over 4}, \sqrt 2$): <br />
 			<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
@@ -223,6 +242,8 @@
 			<font color="red" size="6">tan 2α = $2 \ tan α \over 1 - tan^2 α$</font> <br />
 			<br />
 			<font color="red" size="6">cos 2α = $1 - 2sin^2 α$</font>(∵$sin^2 α + cos^2 α = 1$) <br />
+			<font color="red" size="6">cos 2α = $2cos^2 α - 1$</font> <br />
+			<font color="red" size="6">cos 2α = $1 - tan^2 α \over {1 + tan^2 α}$(见书最后例)</font> <br />
 		</div>
 		
 		<br />
@@ -242,6 +263,13 @@
 			由 $sin(\alpha + \beta)$ 和 $sin(\alpha - \beta)$ 两边分别相加和相减得到: <br />
 			<font color="red" size="6">$sin \alpha cos \beta = {1 \over 2}[sin(\alpha + \beta) + sin(\alpha - \beta)]$</font> <br />
 			<font color="red" size="6">$cos \alpha sin \beta = {1 \over 2}[sin(\alpha + \beta) - sin(\alpha - \beta)]$</font> <br />
+
+            <br />
+            <b>和差化积公式(下方4个):</b> <br />
+            <font color="red" size="6">$cos \alpha + cos \beta = 2 cos{\alpha + \beta \over 2} cos{\alpha - \beta \over 2}$</font> <br />
+            <font color="red" size="6">$cos \alpha - cos \beta = -2 sin{\alpha + \beta \over 2} sin{\alpha - \beta \over 2}$</font> <br />
+            <font color="red" size="6">$sin \alpha + sin \beta = 2 sin{\alpha + \beta \over 2} cos{\alpha - \beta \over 2}$</font> <br />
+            <font color="red" size="6">$sin \alpha - sin \beta = 2 cos{\alpha + \beta \over 2} sin{\alpha - \beta \over 2}$</font> <br />
 		</div>
 		<div class="code_block">
 			拓展阅读: <br />

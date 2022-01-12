@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第六章 计数原理</title>
+    <link rel="stylesheet" href="../../css/code_black.css" />
+    <!-- MathJax数学公式 -->
+    <script src="../../js/load-mathjax.js" async></script>
+</head>
+
+<body>
+    <h1>第六章 计数原理</h1>
+    <hr />
+    注: 如非特殊说明, 以下图片都来自<a href="https://mp.weixin.qq.com/s/h2NZ5qzEuskJ5_lx2tUqQA" target="_blank">高中数学考点题解</a>公众号
+
+    <h2>6.1 分类加法计数原理与分步乘法计数原理</h2>
+    <div class="code_block">
+        1.分类加法计数原理: <br />
+        完成一件事情有两种不同方案, 在第1类方案中有m种不同的方法, 在第2类方案中n种不同的方法, 那么完成这件事共有 <br />
+        <font color="red" size="6">N = m + n</font> 种不同的方法. <br />
+        <br />
+        2.分步乘法计数原理: <br />
+        完成一件事情需要两个步聚, 做第1步有m种不同的方法, 做第2步有n种不同的方法, 那么完成这件事共有: <br />
+        <font color="red" size="6">N = m . n</font> 种不同的方法. <br />
+        <br />
+        3.子集的个数 <br />
+        问题: n元集合A = {a1, a2, …, an}的子集有多少个? <br />
+        <font color="red" size="6">子集个数 = $2^n$</font>
+    </div>
+
+    <br />
+    <h2>6.2 排列与组合</h2>
+    <h3>6.2.1 排列</h3>
+    <div class="code_block">
+        &emsp; 一般地，从n个不同元素中取出m(m≤n)个元素, 并按照一定的顺序排成一列, 叫做从n个不同元素中取出m个元素的一个<font color="red">排列</font>(arrangement). <br />
+        &emsp; 根据排列的定义，两个排列相同的充要条件是: 两个排列的元素完全相同，且元素的排列顺序也相同. <br />
+        例如，<font color="red">123与132</font> 虽然元素完全相同，但元素的排列顺序不同，它们也是<font color="red">不同的排列</font>.
+    </div>
+    <h3>6.2.2 排列数</h3>
+    <div class="code_block">
+        我们把从n个不同元素中取出m(m≤n)个元素的所有不同排列的个数，叫做从n个不同元素中取出m个元素的排列数，用符号<font color="red">$A_n^m$</font> 表示. <br />
+        排列数公式: <br />
+        <font color="red" size="6">$A_n^m =$</font> <font size="6">n(n - 1)(n - 2)...(n - m + 1)</font> <br />
+        <font size="6">&emsp;&emsp; $ = {n(n - 1)(n - 2)...(n - m + 1) \ \ \ * \ \ \ (n-m)*...*2*1 \over (n-m)*...*2*1}$</font> <br />
+        <font color="red" size="6">&emsp;&emsp; $ = {n! \over (n - m)!}$</font> <br />
+            $A_5^2 = 5*4 = 20$ <br />
+        $A_8^3 = 8*7*6 = 336$ <br />
+        <font color="red" size="6">$A_n^n = n!$</font> <br />
+        <font color="red" size="6">$0! = 1$</font> <br />
+    </div>
+    <h3>6.2.3 组合</h3>
+    <div class="code_block">
+        一般地, 从n个不同对象中取出m (m≤n)个对象并成一组, 称为从n个不同对象中取出m个对象的一个组合. <br />
+        <font color="red">123与132</font> 元素完全相同，所以是<font color="red">不同的排列</font>, 但是<font color="red">相同的组合</font>.
+    </div>
+    <h3>6.2.4 组合数</h3>
+    <div class="code_block">
+        从n个不同对象中取出m个对象的所有组合的个数, 称为从n个不同对象中取出m个对象的<font color="red">组合数</font>, 用符号 <font color="red">$C_n^m$</font> 表示(Combination). <br />
+        <br />
+        考虑到从n个不同对象中取出m个做排列, 可以分成两个步骤完成: <br />
+        第一步, 从n个不同对象中取出m个, 有 $C_n^m$ 种选法; <br />
+        第二步,将选出的m个对象做全排列, 有 $A_m^m$ 种排法. <br />
+        由分步乘法计数原理有 $A_n^m = C_n^m * A_m^m$, 所以 <br />
+        <font color="red" size="6">$C_n^m = {A_n^m \over A_m^m} = {A_n^m \over m!}$</font> <br />
+        <font>= ${n(n-1)...[n-(m-1)] \over m(m-1) x ... x 2 x 1}$</font> <br />
+        <font color="red" size="6">= $n! \over m! (n-m)!$</font> <br />
+        <font color="red" size="6">= $C_n^{n - m}$</font> 性质一 <br />
+        <br />
+        <font color="red" size="6">= $C_{n + 1}^m = C_n^m + C_n^{m - 1}$</font> 性质二 <br />
+        <br />
+        <br />
+        <br />
+        <font color="red" size="6">= $C_n^0 = 1$</font> <br />
+    </div>
+
+    <br />
+    <h2>6.3 二项式定理</h2>
+    <h3>6.3.1 二项式定理</h3>
+    更多资料可参考: <a href="https://baike.baidu.com/item/%E7%89%9B%E9%A1%BF%E4%BA%8C%E9%A1%B9%E5%BC%8F/193644?fr=aladdin" target="_blank">牛顿二项式_百度百科.html</a>
+    <div class="code_block">
+        二项式是只有两项的多项式，即两个单项式的和。是仅次于单项式的最简单多项式。 <br />
+        <br />
+        <font color="red">$(a + b)^n = C_n^0 a^n + C_n^1 a^{n-1} b + ... + C_n^k a^{n-k} b^k + C_n^n b^n$</font> (n是整数, 0≤k≤n) <br />
+        等式右边的式子称为 $(a+b)^n$ 的展开式, 它共有 n+1 项,
+        其中 $C_n^k a^{n-k} b^k$ 是展开式中的第 k+1 项(通常用 $T_{k+1}$ 表示), <br />
+        <font color="red">$C_n^k$</font> 称为第 k+1 项的<font color="red">二项式系数</font>, <br />
+        我们将 $T_{k+1} = C_n^k a^{n-k} b^k$ 称为二项展开式的<font color="red">通项公式</font>. <br />
+    </div>
+    <h3>6.3.2 二项式系数的性质</h3>
+    <div class="code_block">
+        <font color="red">1.对称性</font>: 与首位两端"等距离"的2个二项式相等.($C_n^m = C_n^{n - m}$) <br />
+        <font color="red">2.增减性</font> 与 <font color="red">最大值</font> <br />
+          &emsp; 当 k &lt; $n + 1 \over 2$ 时, $C_n^k$ 随k的增加而增大. <br />
+          &emsp; 当 k > $n + 1 \over 2$ 时, $C_n^k$ 随k的增加而减小. <br />
+          <br />
+          &emsp; 当 n 是偶数时, 最大值: $C_n^{n \over 2}$ <br />
+          &emsp; 当 n 是奇数时, 最大值: $C_n^{n - 1 \over 2}, C_n^{n + 1 \over 2}$ <br />
+        <br />
+        <br />
+        ∵ $(1 + x)^n = C_n^0 + C_n^1x + C_n^2x^2 + ... + C_n^nx^n$ <br />
+        令 x = 1, ⇒ <br />
+        <font color="red" size="6">$C_n^1 + C_n^2 + ... + C_n^{n-1} + C_n^n = 2^n$</font> <br />
+        <br />
+        例: <br />
+        $(a + b)^6 = 1a^6b^0 + 6a^5b^1 + 15a^4b^2 + 20a^3b^3 + 15a^2b^4 + 6a^1b^5 + 1a^0b^6$ <br />
+        <br />
+        <font color="red">3.奇数项的二项式系数的和</font> 等于 <font color="red">偶数项的二项式系数的和</font>. <br />
+        <font color="red" size="6">$C_n^0 + C_n^2 + C_n^4 + ... = C_n^1 + C_n^3 + C_n^5 + ...$</font>
+    </div>
+
+    <br />
+    <h2>数学探究</h2>
+    <h3>杨辉三角的性质与应用</h3>
+    <div class="code_block">
+        <img src="../../img/high22/3331.png" /> <br />
+        <font color="red" size="6">$C_n^m = C_{n-1}^{m - 1} + C_{n-1}^m$</font>
+    </div>
+    <h4>4.二项式定理的应用</h4>
+    <div class="code_block">
+        例1: 求证 $99^{98}$ - 1 能被100整除. <br />
+        ∵ $99^{98} = (100 - 1)^{98}$ <br />
+        = $C_{98}^0 100^{98} + C_{98}^1 100^{97}(-1) + C_{98}^2 100^{96}(-1)^2 + ... + C_{98}^{97} 100^1(-1)^{97} + C_{98}^{98} 100^0(-1)^{98}$ <br />
+        注意到上述右边的展开式中, 前面98项都是100的倍数, 最后一项为1, 由此可知 $99^{98}$ - 1 能被100整除.
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</body>
+</html>

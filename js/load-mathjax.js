@@ -22,8 +22,9 @@ window.MathJax = {
 (function () {
   var script = document.createElement('script');
   // script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
-  //下面这个好像显示更清晰
-  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+  //下面这个好像显示更清晰(但是外网不能访问)
+  // script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+  script.src = 'https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js';
   //   script.src = 'https://cdn.staticfile.org/mathjax/3.2.0/mathjax.min.js';
   //   script.src = 'https://cdn.staticfile.org/mathjax/3.2.0/es5/core.js';
     // script.src = 'https://cdn.mathjax.org/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';

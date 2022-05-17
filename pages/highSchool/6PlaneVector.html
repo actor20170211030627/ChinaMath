@@ -1,28 +1,134 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>第六章 平面向量初步</title>
-	</head>
-	
-	<body>
-		<h1>第六章 平面向量初步</h1>
-		<hr />
-		
-	　　<h2>6.1平面向量及其线性运算</h2>
-	　　<h3>6.1.1 向量的概念</h3>
-	　　<h3>6.1.2向量的加法</h3>
-	　　<h3>6.1.3向量的减法</h3>
-	　　<h3>6.1.4 数乘向量</h3>
-	　　<h3>6.1.5向量的线性运算</h3>
-	
-		<br />
-	　　<h2>6.2向量基本定理与向量的坐标</h2>
-	　　<h3>6.2.1 向量基本定理</h3>
-	　　<h3>6.2.2 直线上向量的坐标及其运算</h3>
-	　　<h3>6.2.3平面向量的坐标及其运算</h3>
-	
-		<br />
-	　　<h2>6.3平面向量线性运算的应用</h2>
-	</body>
+<head>
+    <meta charset="utf-8">
+    <title>第六章 平面向量初步</title>
+    <link rel="stylesheet" href="../../css/code_black.css" />
+    <!-- MathJax数学公式 -->
+    <script src="../../js/load-mathjax.js" async></script>
+</head>
+
+<body>
+    <h1>第六章 平面向量初步</h1>
+    注: 如非特殊说明, 以下图片都来自<a href="https://mp.weixin.qq.com/s/ywUnm0ddWTnEksN_CX8Bkg" target="_blank">高中数学考点题解</a>公众号
+    <hr/>
+
+    <h2>6.1平面向量及其线性运算</h2>
+    <h3>6.1.1 向量的概念</h3>
+    <h3>6.1.2向量的加法</h3>
+    <div class="code_block">
+        <font color="red">$\overrightarrow {AB}$ + $\overrightarrow {BC}$ = $\overrightarrow {AC}$</font>
+    </div>
+    <br />
+
+    <h3>6.1.3向量的减法</h3>
+    <div class="code_block">
+        <img src="../../img/high22/6131.png" /> <br />
+        因为: $\overrightarrow {OB}$ + $\overrightarrow {BA}$ = $\overrightarrow {OA}$ <br />
+        所以: <font color="red">$\overrightarrow {OA}$ - $\overrightarrow {OB}$ = $\overrightarrow {BA}$</font>
+    </div>
+    <br />
+
+    <h3>6.1.4 数乘向量</h3>
+    <div class="code_block">
+        <img src="../../img/high22/6141.png" /> <br />
+        向量a <br />
+        <br />
+
+        公式: <font color="red">$λ(μa) = (λμ)a$</font> <br />
+        例: $3 * (4a) = (3*4)a = 12a$
+    </div>
+    <br />
+
+    <h3>6.1.5向量的线性运算</h3>
+    <div class="code_block">
+        实数λ,μ 向量a,b <br />
+        公式: <font color="red">$λa + μa = (λ + μ)a$</font> <br />
+        公式: <font color="red">$λ(a + b) = λa + λb$</font> <br />
+    </div>
+    <br />
+
+    <br/>
+    <h2>6.2向量基本定理与向量的坐标</h2>
+    <h3>6.2.1 向量基本定理</h3>
+    <h4>1.共线向量基本定理 <br />
+        <div class="code_block">
+            如果向量a ≠ 0, 且向量 b<i>∥</i>a, 则存在唯一实数λ, 使得 <font color="red">b = λa</font>
+        </div>
+    </h4>
+    <h4>2.平面向量基本定理 <br />
+        <div class="code_block">
+            如果平面内两个向量a 与 b不共线, 则对该平面内任意一个向量 c, 存在唯一的实数对(x, y), 使得 <font color="red">c = xa + yb</font>
+        </div>
+        <br />
+    </h4>
+
+    <h3>6.2.2 直线上向量的坐标及其运算</h3>
+    <div class="code_block">
+        e 是单位向量(1, 0) <br />
+        <img src="../../img/high22/62221.png" /> <br />
+    </div>
+    <br />
+
+    <h3>6.2.3平面向量的坐标及其运算</h3>
+    <h4>1.平面向量的坐标</h4>
+    <div class="code_block">
+        零向量与任何向量都垂直. <br />
+        如果平面向量{$e_1, e_2$}中, $e_1 ⊥ e_2$, 就称这组基底为<font color="red">正交基底</font>, 在正交基底下向量的分解称为向量的<font color="red">正交分解</font>. <br />
+        <br />
+
+        <img src="../../img/high22/62311.png" /> <br />
+        可以看出, a = $2e_1 + 2e_2$, b = $3e_1 - 2e_2$ <br />
+        一般地:<br />
+        给定平面内两个相互垂直的单位向量$e_1, e_2$, 对于平面内的向量a，如果<font color="red">a= $xe_1 + ye_2$</font>, <font color="red">则称(x，y)为向量a的坐标</font>，记作<font color="red">a=(x, y)</font>.</font>
+    </div>
+
+    <h4>2.平面上向量的运算与坐标的关系</h4>
+    <div class="code_block">
+        假设平面，上两个向量a, b满足a=($x_1, \ y_1$)，b=($x_2, \ y_2$) <br />
+        因为: $a + b = x_1e_1 + y_1e_2 + x_2e_1 + y_2e_2 = (x_1 + x_2)e_1 + (y_1 + y_2)e_2$. <br />
+        所以: <font color="red">$a + b = (x_1 + x_2, \ y_1 + y_2)$</font>. <br />
+        <br />
+
+        类似地，可以得出，如果u，v是两个实数，那么: <br />
+        <font color="red">$ua + vb = (ux_1 + vx_2, \ uy_1 + vy_2$)</font>, <br />
+        <font color="red">$ua - vb = (ux_1 - vx_2, \ uy_1 - vy_2$)</font> <br />
+        <br />
+
+        向量的模: <br />
+        <font color="red">$|a| = \sqrt{x^2 + y^2}$</font>.
+    </div>
+
+    <h4>3.平面直角坐标系内两点之间的距离公式与中点坐标公式</h4>
+    <div class="code_block">
+        设A($x_1, \ y_1$), B($x_2, \ y_2$)为平面直角坐标系中的两点，则: <br />
+        $\overrightarrow {OA} = (x_1, \ y_1)$, $\overrightarrow {OB} = (x_2，y_2)$, <br />
+        所以: $\overrightarrow {AB} = \overrightarrow {OB} - \overrightarrow {OA} = (x_2, \ y_2) - (x_1, \ y_1) = (x_2 - x_1, \ y_2 - y_1)$, <br />
+        因此: <font color="red">AB = $|\overrightarrow {AB}| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$</font>. <br />
+        这就是平面直角坐标系内两点之间的<font color="red">距离公式</font>. <br />
+        <br />
+
+        <font color="red">x = ${x_1 + x_2} \over 2$, y = ${y_1 + y_2} \over 2$</font> <br />
+        这就是平面直角坐标系内的<font color="red">中点坐标公式</font>.
+    </div>
+
+    <h4>4.向量平行的坐标表示</h4>
+    <div class="code_block">
+        设a=($x_1, \ y_1$)，b=($x_2，y_2$)，下面我们来考察这两个向量平行时，它们的坐标应该满足的条件. <br />
+        <font color="red">a//b ⇔ $x_2y_1 = x_1y_2$</font>. <br />
+        <br />
+
+        例6: 已知$\overrightarrow {AB}$ = (2, 5)，a = (1, y), $\overrightarrow {AB}$//a, 求y的值. <br />
+        解: 因为$\overrightarrow {AB}$//a, 所以1*5 = 2*y, 解得y = 2.5 <br />
+    </div>
+    <br />
+
+
+    <br/>
+    <h2>6.3平面向量线性运算的应用</h2>
+    <h4>1.向量在平面几何中的应用</h4>
+    <h4>2.向量在物理中的应用</h4>
+    <br />
+
+</body>
 </html>

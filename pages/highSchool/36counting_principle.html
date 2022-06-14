@@ -23,7 +23,7 @@
         完成一件事情需要两个步聚, 做第1步有m种不同的方法, 做第2步有n种不同的方法, 那么完成这件事共有: <br />
         <font color="red" size="6">N = m . n</font> 种不同的方法. <br />
         <br />
-        3.子集的个数 <br />
+        3.子集的个数(p12) <br />
         问题: n元集合A = {a1, a2, …, an}的子集有多少个? <br />
         <font color="red" size="6">子集个数 = $2^n$</font>
     </div>
@@ -62,15 +62,16 @@
         第二步,将选出的m个对象做全排列, 有 $A_m^m$ 种排法. <br />
         由分步乘法计数原理有 $A_n^m = C_n^m * A_m^m$, 所以 <br />
         <font color="red" size="6">$C_n^m = {A_n^m \over A_m^m} = {A_n^m \over m!}$</font> <br />
-        <font>= ${n(n-1)...[n-(m-1)] \over m(m-1) x ... x 2 x 1}$</font> <br />
-        <font color="red" size="6">= $n! \over m! (n-m)!$</font> <br />
-        <font color="red" size="6">= $C_n^{n - m}$</font> 性质一 <br />
+        <font>= ${n(n-1)...[n-(m-1)] \over m(m-1) * ... * 2 * 1}$</font> <br />
+        <font color="red" size="6">= $n! \over m! (n-m)!$</font> (p24) <br />
+        <font color="red" size="6">= $C_n^{n - m}$</font> 性质一(p28) <br />
         <br />
-        <font color="red" size="6">= $C_{n + 1}^m = C_n^m + C_n^{m - 1}$</font> 性质二 <br />
+        <font color="red" size="6">$C_n^0 = 1$</font>(p24) <br />
+        <br />
+        <font color="red" size="6">$C_{n + 1}^m = C_n^m + C_n^{m - 1}$</font> 性质二(p28) <br />
         <br />
         <br />
         <br />
-        <font color="red" size="6">= $C_n^0 = 1$</font> <br />
     </div>
 
     <br />

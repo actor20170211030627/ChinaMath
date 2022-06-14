@@ -1,284 +1,310 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>第八章 向量的数量积与三角恒等变换</title>
-		<link rel="stylesheet" href="../../css/code_black.css" />
-		<!-- MathJax数学公式 -->
-		<script src="../../js/load-mathjax.js" async></script>
-		<!-- echarts图表: https://github.com/apache/echarts,
-		     https://echarts.apache.org/zh/index.html -->
-		<script src="https://cdn.staticfile.org/echarts/5.2.1/echarts.min.js"></script>
-	</head>
-	
-	<body>
-		<h1>第八章 向量的数量积与三角恒等变换</h1>
-		<hr />
-		注: 如非特殊说明, 以下图片都来自<a href="https://mp.weixin.qq.com/s/4Lv5srftyCEOo-5WhVvYaw" target="_blank">高中数学考点题解</a>公众号
-		
-	　　<h2>8.1 向量的数量积</h2>
-	　　<h3>8.1.1 向量数量积的概念</h3>
-		<h4>1.两个向量的夹角</h4>
-		<div class="code_block">
-			给定两个非零向量a, b, 在平面内任选一点O, 作$\overrightarrow {OA} = a$, $\overrightarrow {OB} = b$,
-			则称[0,π]内的∠AOB为向量a与向量b的<font color="red">夹角</font>, 记作<font color="red">&lt;a, b&gt;</font>. <br />
-			<img src="../../img/high22/81111.png" /> <br />
-			
-			如上图, 向量a与c的夹角为$\pi \over 2$, 即 &lt;a,c>=$\pi \over 2$; <br />
-			向量a与d的夹角为0, 即&lt;a,d>=0; <br />
-			向量a与e的夹角为π, 即&lt;a,e>=π.
-		</div>
-		
-		<h4>2.向量数量积的定义</h4>
-		<div class="code_block">
-			当a与b都是非零向量时, 称 |a||b|cos &lt;a,b> 为向量a与b的<font color="red">数量积</font>(也称为<font color="red">内积</font>),
-			记作 a·b, 即: <br />
-			<font color="red">a·b = |a||b|cos&lt;a,b></font>. <br />
-			<br />
-			由此可知, 两个非0向量a与b的数量积是一个实数, 这与向量的加法, 减法 以及 数乘向量 的结果任是一个向量不同. <br />
-			a与b垂直的充要条件 是 他们的数量积=0, 即: <br />
-            <font color="red">a⊥B ⇔ a.b=0</font> <br />
-            <br />
-            例1: |a| = 5, |b| = 4, &lt;a, b> = 120°, 求 a.b <br />
-            解: <br />
-            &emsp; a.b = |a|.|b|.cos&lt;a, b> = 20.(-1/2) = -10 <br />
-            <br />
-            <font color="red">⇒cos&lt;a, b> = $a.b \over |a||b|$</font>
-		</div>
-		
-		<h4>3.向量的投影与向量数量积的集合意义</h4>
-		<div class="code_block">
-			<img src="../../img/high22/81131.png" /> <br />
-			<img src="../../img/high22/81132.png" /> <br />
-			<img src="../../img/high22/81133.png" /> <br />
-			例: <br />
-			<img src="../../img/high22/81134.png" />
-		</div>
-		
-		<br />
-	　　<h3>8.1.2 向量数量积的运算律</h3>
-		<div class="code_block">
-			<font color="red">$a.b = b.a$</font> <br />
-			<font color="red">$(\lambda a).b = \lambda(a.b)$</font> (当a,b都是非零向量且λ≠0) <br />
-			<font color="red">$(a + b) . c =a.c + b.c$</font> 证明如下:↓ <br />
-			<img src="../../img/high22/8121.png" />
-		</div>
-		<br />
-		例2, 例3:
-		<div class="code_block">
-			<img src="../../img/high22/8122.png" />
-		</div>
-		<br />
-		例4:
-		<div class="code_block">
-			<img src="../../img/high22/8123.png" />
-		</div>
-		
-		<br />
-	　　<h3>8.1.3 向量数量积的坐标运算</h3>
-		<h4>1.向量的坐标与向量的数量积</h4>
-		<div class="code_block">
-			<img src="../../img/high22/81311.png" /> <br />
-			<font color="red" size="6">$\displaystyle a.b = x_1 x_2 + y_1 y_2$</font> <br />
-            由此可知, 利用向量的坐标可以迅速地算出向量的数量积. <br />
-            <br />
-            而且, 当a=($x_1, y_1), b = (x_2, y_2)$都不是0向量时, 因为 $|a|^2 = a.a = x_1^2 + y_1^2, |b|^2 = b.b = x_2^2 + y_2^2$, <br />
-            ⇒ <font color="red" size="6">cos &lt;a, b> = ${x_1 x_2 + y_1 y_2 \over {\sqrt {x_1^2 + y_1^2} \sqrt {x_2^2 + y_2^2}}}$</font> <br />
-            也就是说, 根据向量的坐标, 还能方便地算出他们的 <font color="red">模</font> 以及 <font color="red">夹角</font> 等. <br />
-            <br />
-            在平面直角坐标系中，如果$A(x_1，y_1), B(x_2, y_2)$, 则$\overrightarrow {AB} = (x_2 - x_1, y_2 - y_1)$, <br />
-            从而$\overrightarrow {AB} . \overrightarrow {AB} = (x_2 - x_1)^2 + (y_2 - y_1)^2$, 因此 <br />
-            $|\overrightarrow {AB}| = \sqrt {(x_2 - x_1)^2 + (y_2 - y_1)^2}$.
-            这就是说, 利用向量的数量积, 同样可以方便地得出平面直角坐标系中两点之间的距离公式. <br />
-        </div>
-		<h4>2.用向量的坐标表示两个向量垂直的条件</h4>
-		<div class="code_block">
-			<img src="../../img/high22/81321.png" /> <br />
-			<font color="red">后面还有一些内容没整理...</font>
-		</div>
-	　　
-		<br />
-		<h2>8.2 三角恒等变换</h2>
-	　　<h3>8.2.1 两角和与差的余弦</h3>
-		<div class="code_block">
-			<font color="red" size="6">$cos(\alpha - \beta) = cos \alpha \ cos \beta + sin \alpha \ sin \beta$</font> <br />
-			<img src="../../img/high22/8211.png" /> <br />
-			<br />
-			<font color="red" size="6">$cos(\alpha + \beta) = cos \alpha \ cos \beta - sin \alpha \ sin \beta$</font> <br />
-			证明: <br />
-			cos(α + β) = cos(α - (-β)) <br />
-			= cosα.cos(-β) + sinα.sin(-β) <br />
-			= cosα.cosβ - sinα.sinβ
-		</div>
-		
-		<br />
-	　　<h3>8.2.2 两角和与差的正弦、正切</h3>
-		<h4>1.两角和与差的正弦</h4>
-		<div class="code_block">
-			<font color="red" size="6">$sin(α + β) = sin α \ cosβ + cosα \ sinβ$</font> <br />
-			<font color="red" size="6">$sin(α - β) = sin α \ cosβ - cosα \ sinβ$</font> <br />
-			证明: <br />
-			sin(α + β) = cos(($\pi \over 2$ - α) - β) <br />
-			= cos($\pi \over 2$ - α)cosβ + sin($\pi \over 2$ - α)sinβ <br />
-			=sinα cosβ + cosα sinβ <br />
-			<br />
-			<img src="../../img/high22/82211.png" /> <br />
-			<br />
-			<font color="red" size="6">$asin x + bcos x = A \ sin(x + ϕ)$</font> <br />
-			<font color="red" size="6">$A = \sqrt {a^2 + b^2}$</font> <br />
-			<font color="red" size="6">$cos \phi = {a \over A}, sin \phi = {b \over A}$(φ>0左移, &lt;0右移)</font> <br />
-			<br />
-			下图1是 $y = 1.sin x + 1.cos x$ 的函数, 右侧最高点(${\pi \over 4}, \sqrt 2$): <br />
-			<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-			<div id="sinx1" style="width: 400px;height:400px;"></div>
-			<script type="text/javascript">
-				// 基于准备好的dom，初始化echarts实例
-				var myChart = echarts.init(document.getElementById('sinx1'));
-				
-				 var option;
-				 function func(x) {
-					 return Math.sin(x) + Math.cos(x);
-				 }
-				 function generateData() {
-				   let data = [];
-				   for (let i = -10; i <= 10; i += 0.01) {
-					 data.push([i, func(i)]);
-				   }
-				   return data;
-				 }
-				 option = {
-				   animation: false,
-				   grid: {
-					 // 图表距4个边的距离
-					 top: 40,
-					 left: 50,
-					 right: 40,
-					 bottom: 50
-				   },
-				   xAxis: {
-					 name: 'x轴',
-					 min: -5,
-					 max: 5,
-					 minorTick: {
-					   // 坐标轴次刻度线
-					   show: true
-					 },
-					 minorSplitLine: {
-					   // 是否显示次分隔线。默认不显示(网格竖着那条线)
-					   show: true
-					 }
-				   },
-				   yAxis: {
-					 name: 'y轴(图1)',
-					 min: -5,
-					 max: 5,
-					 minorTick: {
-						// 坐标轴次刻度线
-					   show: true
-					 },
-					 minorSplitLine: {
-						// 是否显示次分隔线。默认不显示(网格横着那条线)
-					   show: true
-					 }
-				   },
-				   dataZoom: [
-					 // 缩放
-					 {
-					   show: true,
-					   // inside: 将缩放组件内置在坐标系中
-					   type: 'inside',
-					   filterMode: 'none',
-					   // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
-					   xAxisIndex: [0],
-					   startValue: -20,
-					   endValue: 20
-					 },
-					 {
-					   show: true,
-					   type: 'inside',
-					   filterMode: 'none',
-					   yAxisIndex: [0],
-					   startValue: -20,
-					   endValue: 20
-					 }
-				   ],
-				   series: [
-					 {
-					   // 显示类型, line线
-					   type: 'line',
-					   // 是否显示绘制的点
-					   showSymbol: false,
-					   // 超出界限外的是否裁剪掉
-					   clip: true,
-					   data: generateData()
-					 }
-				   ]
-				 };
-				 
-				 option && myChart.setOption(option);
-			</script>
-			
-			
-			<img src="../../img/high22/82212.png" /> <br />
-			<br />
-			例: <br />
-			<img src="../../img/high22/82213.png" />
-		</div>
-		<h4>2.两角和与差的正切</h4>
-		<div class="code_block">
-			<font color="red" size="6">tan(α + β)</font> = $sin(α + β) \over cos(α + β)$ <br />
-			= $sinα \ cosβ + cosα \ sinβ \over {cosα \ cosβ - sinα \ sinβ}$ 分子分母同时除以cosα cosβ <br />
-			<font color="red" size="6">= $tan α + tan β \over 1 - tan α \ tan β$</font> <br />
-			
-			<br />
-			⇒ <font color="red" size="6">tan(α - β) = $tan α - tan β \over 1 + tan α \ tan β$</font>
-		</div>
-		
-		<br />
-	　　<h3>8.2.3 倍角公式</h3>
-		<div class="code_block">
-			<font color="red" size="6">sin 2α = 2sinα cosα</font> <br />
-			<font color="red" size="6">cos 2α = $cos^2 α - sin^2 α$</font> <br />
-			<font color="red" size="6">tan 2α = $2 \ tan α \over 1 - tan^2 α$</font> <br />
-			<br />
-			<font color="red" size="6">cos 2α = $1 - 2sin^2 α$</font>(∵$sin^2 α + cos^2 α = 1$) <br />
-			<font color="red" size="6">cos 2α = $2cos^2 α - 1$</font> <br />
-			<font color="red" size="6">cos 2α = $1 - tan^2 α \over {1 + tan^2 α}$(见书最后例)</font> <br />
-		</div>
-		
-		<br />
-	　　<h3>8.2.4 三角恒等变换的应用</h3>
-		<div class="code_block">
-			<font color="red" size="6">$sin^2 {\alpha \over 2} = {{1 - cos \alpha} \over 2}$</font> <br />
-			<font color="red" size="6">$cos^2 {\alpha \over 2} = {{1 + cos \alpha} \over 2}$</font> <br />
-			<font color="red" size="6">$tan^2 {\alpha \over 2} = {{1 - cos \alpha} \over {1 + cos \alpha}}$</font> <br />
-			<br />
-			<font color="red" size="6">$tan {\alpha \over 2} = {sin \alpha \over {1 + cos \alpha}} = {{1 - cos \alpha} \over sin \alpha}$</font> <br />
-			<br />
-			<b>积化和差公式(下方4个):</b> <br />
-			由 $cos(\alpha + \beta)$ 和 $cos(\alpha - \beta)$ 两边分别相加和相减得到: <br />
-			<font color="red" size="6">$cos \alpha cos \beta = {1 \over 2}[cos(\alpha + \beta) + cos(\alpha - \beta)]$</font> <br />
-			<font color="red" size="6">$sin \alpha sin \beta = - {1 \over 2}[cos(\alpha + \beta) - cos(\alpha - \beta)]$</font> <br />
-			<br />
-			由 $sin(\alpha + \beta)$ 和 $sin(\alpha - \beta)$ 两边分别相加和相减得到: <br />
-			<font color="red" size="6">$sin \alpha cos \beta = {1 \over 2}[sin(\alpha + \beta) + sin(\alpha - \beta)]$</font> <br />
-			<font color="red" size="6">$cos \alpha sin \beta = {1 \over 2}[sin(\alpha + \beta) - sin(\alpha - \beta)]$</font> <br />
+<head>
+    <meta charset="utf-8">
+    <title>第八章 向量的数量积与三角恒等变换</title>
+    <link rel="stylesheet" href="../../css/code_black.css"/>
+    <!-- MathJax数学公式 -->
+    <script src="../../js/load-mathjax.js" async></script>
+    <!-- echarts图表: https://github.com/apache/echarts,
+         https://echarts.apache.org/zh/index.html -->
+    <script src="https://cdn.staticfile.org/echarts/5.2.1/echarts.min.js"></script>
+</head>
 
-            <br />
-            <b>和差化积公式(下方4个):</b> <br />
-            <font color="red" size="6">$cos \alpha + cos \beta = 2 cos{\alpha + \beta \over 2} cos{\alpha - \beta \over 2}$</font> <br />
-            <font color="red" size="6">$cos \alpha - cos \beta = -2 sin{\alpha + \beta \over 2} sin{\alpha - \beta \over 2}$</font> <br />
-            <font color="red" size="6">$sin \alpha + sin \beta = 2 sin{\alpha + \beta \over 2} cos{\alpha - \beta \over 2}$</font> <br />
-            <font color="red" size="6">$sin \alpha - sin \beta = 2 cos{\alpha + \beta \over 2} sin{\alpha - \beta \over 2}$</font> <br />
-		</div>
-		<div class="code_block">
-			拓展阅读: <br />
-			<img src="../../img/high22/8241.png" />
-		</div>
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-	</body>
+<body>
+<h1>第八章 向量的数量积与三角恒等变换</h1>
+<hr/>
+注: 如非特殊说明, 以下图片都来自<a href="https://mp.weixin.qq.com/s/4Lv5srftyCEOo-5WhVvYaw" target="_blank">高中数学考点题解</a>公众号
+
+　　<h2>8.1 向量的数量积</h2>
+　　<h3>8.1.1 向量数量积的概念</h3>
+<h4>1.两个向量的夹角</h4>
+<div class="code_block">
+    给定两个非零向量a, b, 在平面内任选一点O, 作$\overrightarrow {OA} = a$, $\overrightarrow {OB} = b$,
+    则称[0,π]内的∠AOB为向量a与向量b的<font color="red">夹角</font>, 记作<font color="red">&lt;a, b&gt;</font>. <br/>
+    <img src="../../img/high22/81111.png"/> <br/>
+
+    如上图, 向量a与c的夹角为$\pi \over 2$, 即 &lt;a,c>=$\pi \over 2$; <br/>
+    向量a与d的夹角为0, 即&lt;a,d>=0; <br/>
+    向量a与e的夹角为π, 即&lt;a,e>=π.
+</div>
+
+<h4>2.向量数量积的定义</h4>
+<div class="code_block">
+    当a与b都是非零向量时, 称 |a||b|cos &lt;a,b> 为向量a与b的<font color="red">数量积</font>(也称为<font color="red">内积</font>),
+    记作 a·b, 即: <br/>
+    <font color="red">a·b = |a||b|cos&lt;a,b></font>. <br/>
+    <br/>
+    由此可知, 两个非0向量a与b的数量积是一个实数, 这与向量的加法, 减法 以及 数乘向量 的结果任是一个向量不同. <br/>
+    a与b垂直的充要条件 是 他们的数量积=0, 即: <br/>
+    <font color="red">a⊥B ⇔ a.b=0</font> <br/>
+    <br/>
+    例1: |a| = 5, |b| = 4, &lt;a, b> = 120°, 求 a.b <br/>
+    解: <br/>
+    &emsp; a.b = |a|.|b|.cos&lt;a, b> = 20.(-1/2) = -10 <br/>
+    <br/>
+    <font color="red">⇒cos&lt;a, b> = $a.b \over |a||b|$</font>
+</div>
+
+<h4>3.向量的投影与向量数量积的集合意义</h4>
+<div class="code_block">
+    <img src="../../img/high22/81131.png"/> <br/>
+    <img src="../../img/high22/81132.png"/> <br/>
+    <img src="../../img/high22/81133.png"/> <br/>
+    例: <br/>
+    <img src="../../img/high22/81134.png"/>
+</div>
+
+<br/>
+　　<h3>8.1.2 向量数量积的运算律</h3>
+<div class="code_block">
+    <font color="red">$a.b = b.a$</font> <br/>
+    <font color="red">$(\lambda a).b = \lambda(a.b)$</font> (当a,b都是非零向量且λ≠0) <br/>
+    <font color="red">$(a + b) . c =a.c + b.c$</font> 证明如下:↓ <br/>
+    <img src="../../img/high22/8121.png"/>
+</div>
+<br/>
+例2, 例3:
+<div class="code_block">
+    <img src="../../img/high22/8122.png"/>
+</div>
+<br/>
+例4:
+<div class="code_block">
+    <img src="../../img/high22/8123.png"/>
+</div>
+
+<br/>
+　　<h3>8.1.3 向量数量积的坐标运算</h3>
+<h4>1.向量的坐标与向量的数量积</h4>
+<div class="code_block">
+    <img src="../../img/high22/81311.png"/> <br/>
+    <font color="red" size="6">$\displaystyle a.b = x_1 x_2 + y_1 y_2$</font> <br/>
+    由此可知, 利用向量的坐标可以迅速地算出向量的数量积. <br/>
+    <br/>
+    而且, 当a=($x_1, y_1), b = (x_2, y_2)$都不是0向量时, 因为 $|a|^2 = a.a = x_1^2 + y_1^2, |b|^2 = b.b = x_2^2 + y_2^2$, <br/>
+    ⇒ <font color="red" size="6">cos &lt;a, b> = ${x_1 x_2 + y_1 y_2 \over {\sqrt {x_1^2 + y_1^2} \sqrt {x_2^2 +
+    y_2^2}}}$</font> <br/>
+    也就是说, 根据向量的坐标, 还能方便地算出他们的 <font color="red">模</font> 以及 <font color="red">夹角</font> 等. <br/>
+    <br/>
+    在平面直角坐标系中，如果$A(x_1，y_1), B(x_2, y_2)$, 则$\overrightarrow {AB} = (x_2 - x_1, y_2 - y_1)$, <br/>
+    从而$\overrightarrow {AB} . \overrightarrow {AB} = (x_2 - x_1)^2 + (y_2 - y_1)^2$, 因此 <br/>
+    $|\overrightarrow {AB}| = \sqrt {(x_2 - x_1)^2 + (y_2 - y_1)^2}$.
+    这就是说, 利用向量的数量积, 同样可以方便地得出平面直角坐标系中两点之间的距离公式. <br/>
+</div>
+<h4>2.用向量的坐标表示两个向量垂直的条件</h4>
+<div class="code_block">
+    <img src="../../img/high22/81321.png"/> <br/>
+    <font color="red">后面还有一些内容没整理...</font>
+</div>
+　　
+<br/>
+<h2>8.2 三角恒等变换</h2>
+　　<h3>8.2.1 两角和与差的余弦</h3>
+<div class="code_block">
+    <font color="red" size="6">$cos(\alpha - \beta) = cos \alpha \ cos \beta + sin \alpha \ sin \beta$</font> <br/>
+    <img src="../../img/high22/8211.png"/> <br/>
+    <br/>
+    <font color="red" size="6">$cos(\alpha + \beta) = cos \alpha \ cos \beta - sin \alpha \ sin \beta$</font> <br/>
+    证明: <br/>
+    cos(α + β) = cos(α - (-β)) <br/>
+    = cosα.cos(-β) + sinα.sin(-β) <br/>
+    = cosα.cosβ - sinα.sinβ
+</div>
+
+<br/>
+　　<h3>8.2.2 两角和与差的正弦、正切</h3>
+<h4>1.两角和与差的正弦</h4>
+<div class="code_block">
+    <font color="red" size="6">$sin(α + β) = sin α \ cosβ + cosα \ sinβ$</font> <br/>
+    <font color="red" size="6">$sin(α - β) = sin α \ cosβ - cosα \ sinβ$</font> <br/>
+    证明: <br/>
+    sin(α + β) = cos(($\pi \over 2$ - α) - β) <br/>
+    = cos($\pi \over 2$ - α)cosβ + sin($\pi \over 2$ - α)sinβ <br/>
+    =sinα cosβ + cosα sinβ <br/>
+    <br/>
+    <img src="../../img/high22/82211.png"/> <br/>
+    <br/>
+    <font color="red" size="6">$asin x + bcos x = A \ sin(x + ϕ)$</font> <br/>
+    <font color="red" size="6">$A = \sqrt {a^2 + b^2}$</font> <br/>
+    <font color="red" size="6">$cos \phi = {a \over A}, sin \phi = {b \over A}$(φ>0左移, &lt;0右移)</font> <br/>
+    <br/>
+    下图1是 $y = 1.sin x + 1.cos x$ 的函数, 右侧最高点(${\pi \over 4}, \sqrt 2$): <br/>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="sinx1" style="width: 400px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('sinx1'));
+
+        var option;
+
+        function func(x) {
+            return Math.sin(x) + Math.cos(x);
+        }
+
+        function generateData() {
+            let data = [];
+            for (let i = -10; i <= 10; i += 0.01) {
+                data.push([i, func(i)]);
+            }
+            return data;
+        }
+
+        option = {
+            animation: false,
+            grid: {
+                // 图表距4个边的距离
+                top: 40,
+                left: 50,
+                right: 40,
+                bottom: 50
+            },
+            xAxis: {
+                name: 'x轴',
+                min: -5,
+                max: 5,
+                minorTick: {
+                    // 坐标轴次刻度线
+                    show: true
+                },
+                minorSplitLine: {
+                    // 是否显示次分隔线。默认不显示(网格竖着那条线)
+                    show: true
+                }
+            },
+            yAxis: {
+                name: 'y轴(图1)',
+                min: -5,
+                max: 5,
+                minorTick: {
+                    // 坐标轴次刻度线
+                    show: true
+                },
+                minorSplitLine: {
+                    // 是否显示次分隔线。默认不显示(网格横着那条线)
+                    show: true
+                }
+            },
+            dataZoom: [
+                // 缩放
+                {
+                    show: true,
+                    // inside: 将缩放组件内置在坐标系中
+                    type: 'inside',
+                    filterMode: 'none',
+                    // 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+                    xAxisIndex: [0],
+                    startValue: -20,
+                    endValue: 20
+                },
+                {
+                    show: true,
+                    type: 'inside',
+                    filterMode: 'none',
+                    yAxisIndex: [0],
+                    startValue: -20,
+                    endValue: 20
+                }
+            ],
+            series: [
+                {
+                    // 显示类型, line线
+                    type: 'line',
+                    // 是否显示绘制的点
+                    showSymbol: false,
+                    // 超出界限外的是否裁剪掉
+                    clip: true,
+                    data: generateData()
+                }
+            ]
+        };
+
+        option && myChart.setOption(option);
+    </script>
+
+
+    <img src="../../img/high22/82212.png"/> <br/>
+    <br/>
+    例: <br/>
+    <img src="../../img/high22/82213.png"/>
+</div>
+<h4>2.两角和与差的正切</h4>
+<div class="code_block">
+    <font color="red" size="6">tan(α + β)</font> = $sin(α + β) \over cos(α + β)$ <br/>
+    = $sinα \ cosβ + cosα \ sinβ \over {cosα \ cosβ - sinα \ sinβ}$ 分子分母同时除以cosα cosβ <br/>
+    <font color="red" size="6">= $tan α + tan β \over 1 - tan α \ tan β$</font> <br/>
+
+    <br/>
+    ⇒ <font color="red" size="6">tan(α - β) = $tan α - tan β \over 1 + tan α \ tan β$</font>
+</div>
+
+<br/>
+　　<h3>8.2.3 倍角公式</h3>
+<div class="code_block">
+    <font color="red" size="6">sin 2α = 2sinα cosα</font> <br/>
+    <font color="red" size="6">cos 2α = $cos^2 α - sin^2 α$</font> <br/>
+    <font color="red" size="6">tan 2α = $2 \ tan α \over 1 - tan^2 α$</font> <br/>
+    <br/>
+    <font color="red" size="6">cos 2α = $1 - 2sin^2 α$</font>(∵$sin^2 α + cos^2 α = 1$) <br/>
+    <font color="red" size="6">cos 2α = $2cos^2 α - 1$</font> <br/>
+    <font color="red" size="6">cos 2α = $1 - tan^2 α \over {1 + tan^2 α}$(见书最后例)</font> <br/>
+</div>
+
+<br/>
+　　<h3>8.2.4 三角恒等变换的应用</h3>
+<div class="code_block">
+    <b>半角公式(下方4个):</b> <br/>
+    <font color="red" size="6">$sin^2 {\alpha \over 2} = {{1 - cos \alpha} \over 2}$</font> <br/>
+    <font color="red" size="6">$cos^2 {\alpha \over 2} = {{1 + cos \alpha} \over 2}$</font> <br/>
+    <font color="red" size="6">$tan^2 {\alpha \over 2} = {{1 - cos \alpha} \over {1 + cos \alpha}}$</font> <br/>
+    <br/>
+    <font color="red" size="6">$tan {\alpha \over 2} = {sin \alpha \over {1 + cos \alpha}} = {{1 - cos \alpha} \over sin
+        \alpha}$</font> <br/>
+    <br/>
+    <b>积化和差公式(下方4个):</b> <br/>
+    由 $cos(\alpha + \beta)$ 和 $cos(\alpha - \beta)$ 两边分别相加和相减得到: <br/>
+    <font color="red" size="6">$cos \alpha cos \beta = {1 \over 2}[cos(\alpha + \beta) + cos(\alpha - \beta)]$</font>
+    <br/>
+    <font color="red" size="6">$sin \alpha sin \beta = - {1 \over 2}[cos(\alpha + \beta) - cos(\alpha - \beta)]$</font>
+    <br/>
+    <br/>
+    由 $sin(\alpha + \beta)$ 和 $sin(\alpha - \beta)$ 两边分别相加和相减得到: <br/>
+    <font color="red" size="6">$sin \alpha cos \beta = {1 \over 2}[sin(\alpha + \beta) + sin(\alpha - \beta)]$</font>
+    <br/>
+    <font color="red" size="6">$cos \alpha sin \beta = {1 \over 2}[sin(\alpha + \beta) - sin(\alpha - \beta)]$</font>
+    <br/>
+
+    <br/>
+    <b>和差化积公式(下方4个):</b> <br/>
+    <font color="red" size="6">$cos \alpha + cos \beta = 2 cos{\alpha + \beta \over 2} cos{\alpha - \beta \over
+        2}$</font> <br/>
+    <font color="red" size="6">$cos \alpha - cos \beta = -2 sin{\alpha + \beta \over 2} sin{\alpha - \beta \over
+        2}$</font> <br/>
+    <font color="red" size="6">$sin \alpha + sin \beta = 2 sin{\alpha + \beta \over 2} cos{\alpha - \beta \over
+        2}$</font> <br/>
+    <font color="red" size="6">$sin \alpha - sin \beta = 2 cos{\alpha + \beta \over 2} sin{\alpha - \beta \over
+        2}$</font> <br/>
+</div>
+
+<br />
+<h2><font color="red">★★★★★本章总结★★★★★</font> </h2>
+<pre>
+参考资料: <a href="https://www.bilibili.com/video/BV1z54y1q7au" target="_blank">一个视频让你学会推导出所有常用三角函数公式：二倍角公式、降幂公式、半角公式、万能公式、积化和差公式、和差化积公式_哔哩哔哩_bilibili</a>, 感谢up主的无私付出! <br />
+    万能公式的作用:
+
+    三角恒等变换, <a href="../../img/high22/三角恒等变换.xmind" target="_blank">附件</a>:
+    <img width="100%" src="../../img/high22/三角恒等变换.png" />
+</pre>
+
+<br />
+<h2>拓展阅读:</h2>
+<div class="code_block">
+    <img src="../../img/high22/8241.png"/>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body>
 </html>

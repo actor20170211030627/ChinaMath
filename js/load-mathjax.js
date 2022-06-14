@@ -8,7 +8,7 @@
  * <head>
  *     ...
  * 	   <!-- MathJax数学公式 -->
- * 	   <script src="js/load-mathjax.js" async></script>
+ * 	   <script src="../../js/load-mathjax.js" async></script>
  */
 window.MathJax = {
   tex: {

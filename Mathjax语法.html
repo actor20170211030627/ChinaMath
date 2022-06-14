@@ -1,41 +1,84 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Mathjax语法</title>
-		
-		<!-- https://github.com/mathjax/MathJax -->
-		<script>
-			MathJax = {
-				tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-			};
-		</script>
-		<script id="MathJax-script"
-			async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-		</script>
-	</head>
-	
-	<body>
-		<h1>Mathjax语法</h1>
-		资料来自: <a href="https://blog.csdn.net/ajacker/article/details/80301378" target="_blank">Mathjax语法总结_ajacker的博客-CSDN博客_mathjax语法</a> <br />
-		&emsp;&emsp;&emsp;&emsp; <a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">官网</a>
-		
-		<h2>1.基本语法</h2>
-		<ul>
-			<li>\ : 空格</li>
-			<li>\\\ : 换行</li>
-			<li>\not + 符号, 表示否定, 例: $\not=$ $\not∈$</li>
-			<li>行内公式: $e = \sum_{i=0}^n$</li>
-			<li>加上'\displaystyle', 行内公式显示为文内公式: $\displaystyle e = \sum_{i=0}^n$</li>
-			
-			<li></li>
-			<li>单字母向量</li>
-			<li>$\vec a$ : \vec a</li>
-			<li>$\overrightarrow a$ : \overrightarrow a</li>
-			
-			<li></li>
-			<li>$\vec {ab}$ \vec {ab}</li>
-			<li>$\overrightarrow {ab}$ \overrightarrow {ab}</li>
-		</ul>
-	</body>
+<head>
+    <meta charset="utf-8">
+    <title>Mathjax语法</title>
+    <!-- MathJax数学公式 -->
+    <script src="js/load-mathjax.js" async></script>
+    <!-- 给 table 第1列自动排序号, <table class="num_auto_increase" -->
+    <script type="text/javascript" src="js/table_num_auto_increase.js"></script>
+    <link rel="stylesheet" href="css/code_black.css" />
+    <link rel="stylesheet" href="css/table_style.css" />
+</head>
+
+<body>
+<h1>Mathjax语法</h1>
+
+<h3>资料来自:</h3>
+    <div class="code_block">
+        1. <a href="https://blog.csdn.net/ajacker/article/details/80301378" target="_blank">Mathjax语法总结_ajacker的博客-CSDN博客_mathjax语法</a> <br/>
+        2. <a href="https://www.xmind.cn/faq/question/equation/" target="_blank">常见问题 _ XMind思维导图 _ 中文官方网站</a> <br/>
+        3. <a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">官网</a>
+    </div>
+
+<h2>1.基本语法</h2>
+<div class="code_block">
+    <table class="num_auto_increase">
+        <tr>
+            <th>序号</th>
+            <th>符号</th>
+            <th>说明</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td>\</td>
+            <td>空格</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>\\\</td>
+            <td>换行</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>$\not=$ $\not∈$</td>
+            <td>\not + 符号, 表示否定</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>行内公式: $e = \sum_{i=0}^n$</td>
+            <td>行内公式</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>行内显示文内公式: $\displaystyle e = \sum_{i=0}^n$</td>
+            <td>$加上'\displaystyle', 行内公式显示为文内公式</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td colspan="2">字母向量</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>$\vec a$</td>
+            <td>\vec a</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>$\overrightarrow a$</td>
+            <td>$\overrightarrow a</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>$\vec {ab}$</td>
+            <td>\vec {ab}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>$\overrightarrow {ab}$</td>
+            <td>\overrightarrow {ab}</td>
+        </tr>
+    </table>
+</div>
+</body>
 </html>

@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <title>高中数学</title>
     <link rel="stylesheet" href="../../css/code_black.css"/>
+	<!-- MathJax数学公式 -->
+	<script src="../../js/load-mathjax.js" async></script>
+	<!-- echarts图表: https://github.com/apache/echarts,
+	 https://echarts.apache.org/zh/index.html -->
+	<script src="https://cdn.staticfile.org/echarts/5.2.1/echarts.min.js"></script>
 </head>
 
 <body>
@@ -75,8 +80,172 @@
     一般是专题1、专题4、专题5中任意选一个考试。<br/>
 
     <br/>
+	<font color="red">
     arctan是高2学的?
-
+	
+	<br />
+	<br />
+	函数的切线是高2学的??</font> <br />
+	1.<font color="red">"过点"切线方程(f'=$y_0 - b \over {x_0 - a}$): </font>已知函数 y = f(x)<mark>过点(a, b)</mark>, (a, b)不在方程f(x)上, 求切线方程? <br />
+	&emsp; 解: <br />
+	&emsp; 1.设直线和函数相交与某点$(x_0, y_0)$, 根据斜率相等: <br />
+	&emsp;&emsp; <font color="red">$k = y_{(x_0)}' = {{y_0 - b} \over {x_0} - a}$</font> <br />
+	&emsp; 能求出$(x_0, y_0)$的坐标. <br />
+	&emsp; 2.再求出k, b <br />
+	
+	<br />
+	2.<font color="red">"在点处"切线方程(直接求f'): </font>已知函数 y = f(x), 求<mark>在点$(x_0, y_0)$</mark>的切线方程? <br />
+	&emsp; 解: <br />
+	&emsp; 1.设切线方程L: y = kx + b <br />
+	&emsp; 2.切点为: $(x_0, y_0)$ <br />
+	&emsp; 3.则:
+	<table>
+		<tr>
+			<td>
+				\begin{cases}
+				k = y_{(x_0)}' \\
+				y_0 = kx_0 + b
+				\end{cases}
+			</td>
+			<td>
+				能算出 k <br />
+				能算出 b
+			</td>
+		</tr>
+	</table>
+	&emsp; 4.将k和b带入切线方程L: y = kx + b <br />
+	
+	<br />
+	<br />
+	下方分别是方程: y = $x^2$, 和<mark>过点</mark>(2, 0)的<font color="green">切线方程</font>, 和<mark>在点</mark>(1, 1)的<font color="gold">切线方程</font>: <br />
+	
+	<br />
+	<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+	<div id="pow1" style="width: 400px;height:400px;"></div>
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		var myChart = echarts.init(document.getElementById('pow1'));
+	
+		var option;
+	
+		function func(x) {
+			return Math.pow(x, 2);
+		}
+		function func1(x) {
+			return 8 * x - 16;
+		}
+		function func2(x) {
+			return 2 * x - 1;
+		}
+	
+		function generateData() {
+			let data = [];
+			for (let i = -10; i <= 10; i += 0.01) {
+				data.push([i, func(i)]);
+			}
+			return data;
+		}
+		function generateData1() {
+			let data = [];
+			for (let i = -10; i <= 10; i += 0.01) {
+				data.push([i, func1(i)]);
+			}
+			return data;
+		}
+		function generateData2() {
+			let data = [];
+			for (let i = -10; i <= 10; i += 0.01) {
+				data.push([i, func2(i)]);
+			}
+			return data;
+		}
+	
+		option = {
+			animation: false,
+			grid: {
+				// 图表距4个边的距离
+				top: 40,
+				left: 50,
+				right: 40,
+				bottom: 50
+			},
+			xAxis: {
+				name: 'x轴',
+				minorTick: {
+					// 坐标轴次刻度线
+					show: true
+				},
+				minorSplitLine: {
+					// 是否显示次分隔线。默认不显示(网格竖着那条线)
+					show: true
+				}
+			},
+			yAxis: {
+				name: 'y轴(图1)',
+				min: -2,
+				max: 22,
+				minorTick: {
+					// 坐标轴次刻度线
+					show: true
+				},
+				minorSplitLine: {
+					// 是否显示次分隔线。默认不显示(网格横着那条线)
+					show: true
+				}
+			},
+			dataZoom: [
+				// 缩放
+				{
+					show: true,
+					// inside: 将缩放组件内置在坐标系中
+					type: 'inside',
+					filterMode: 'none',
+					// 表示这个 dataZoom 组件控制 第1个 xAxis, xAxis[]可以有多个
+					xAxisIndex: [0],
+					startValue: -7,
+					endValue: 7
+				},
+				{
+					show: true,
+					type: 'inside',
+					filterMode: 'none',
+					yAxisIndex: [0],
+					startValue: -20,
+					endValue: 20
+				}
+			],
+			series: [{
+				// 显示类型, line线
+				type: 'line',
+				// 是否显示绘制的点
+				showSymbol: false,
+				// 超出界限外的是否裁剪掉
+				clip: true,
+				data: generateData()
+			},
+			{
+				// 显示类型, line线
+				type: 'line',
+				// 是否显示绘制的点
+				showSymbol: false,
+				// 超出界限外的是否裁剪掉
+				clip: true,
+				data: generateData1()
+			},
+			{
+				// 显示类型, line线
+				type: 'line',
+				// 是否显示绘制的点
+				showSymbol: false,
+				// 超出界限外的是否裁剪掉
+				clip: true,
+				data: generateData2()
+			}
+			]
+		};
+	
+		option && myChart.setOption(option);
+	</script>
 </div>
 
 <h3>高二数学选择性必修 第一册(A版)(<a href="http://www.dzkbw.com/books/rjb/shuxue/gzaxzxbx1/" target="_blank">资料来源</a>)</h3>
